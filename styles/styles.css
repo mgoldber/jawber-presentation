@@ -6,6 +6,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 :root {
     --hy-red: #e40015;
+    --hy-hover-red: #e44e48;
 }
 
 html {
@@ -45,20 +46,47 @@ h1 {
     margin: 10px 0;
 }
 
-h2 {
-    font-family: "Akkurat Bold", "Open Sans", sans-serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin: 10px 0;
-}
-
-h2::after {
+h1::after {
     content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDkiIGhlaWdodD0iMTAyIiB2aWV3Qm94PSIwIDAgMTA5IDEwMiI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iI0YxNTc1MSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjgxIj4KICAgICAgICA8cGF0aCBkPSJNLjcgNTcuMjdsNzUuNDE3IDEwLjZNMTYuNjczIDQ1LjIzNUw5Mi4wOSA1NS44MzRNMzIuNjQ2IDMzLjE5OGw3NS40MTYgMTAuNiIvPgogICAgPC9nPgo8L3N2Zz4K);
     position: absolute;
     top: 150px;
     right: 50px;
     transform: rotate(40deg) translateX(-50%);
     pointer-events: none;
+}
+
+h2 {
+    font-family: "Akkurat Bold", "Open Sans", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 50px 0 10px;
+    position: relative;
+}
+
+h2.heading {
+    border-top: 2px solid #e44e48;
+    padding-top: 30px;
+}
+
+h2::after {
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDkiIGhlaWdodD0iMTAyIiB2aWV3Qm94PSIwIDAgMTA5IDEwMiI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iI0YxNTc1MSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjgxIj4KICAgICAgICA8cGF0aCBkPSJNLjcgNTcuMjdsNzUuNDE3IDEwLjZNMTYuNjczIDQ1LjIzNUw5Mi4wOSA1NS44MzRNMzIuNjQ2IDMzLjE5OGw3NS40MTYgMTAuNiIvPgogICAgPC9nPgo8L3N2Zz4K);
+    position: absolute;
+    top: 150px;
+    left: -100px;
+    transform: rotate(40deg) translateX(-50%);
+    pointer-events: none;
+}
+
+a {
+    color: var(--hy-red);
+    font-family: "Akkurat Bold", "Open Sans", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: var(--hy-hover-red);
 }
 
 /* header styles */
@@ -87,14 +115,12 @@ aside {
     max-width: 270px;
 }
 
-ul a {
-    color: var(--hy-red);
-    text-decoration: none;
+ul li {
+    margin-bottom: 10px;
 }
 
-ul a:hover {
-    font-family: "Akkurat Bold", "Open Sans", sans-serif;
-    font-weight: 700;
+ul li ul li {
+    font-size: 2rem;
 }
 
 /* main styles */
@@ -102,6 +128,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    font-size: 2.5rem;
 }
 
 /* code styles  💻  */
@@ -110,6 +137,8 @@ main {
 .punctuation{color: #c792ea;}
 .string{color: #addb67;}
 .function-name{color: #ffcb8b;}
+.red-text{color: #FF686B;}
+.comment {color: rgb(131, 128, 128);}
 
 .js-highlight {
     border-radius: 10px;
@@ -123,7 +152,8 @@ pre[class=jsx] {
     min-width: 100%;
 }
 
-code[class=jsx] {
+code[class=jsx],
+span {
     color: #E6DDFC;
     background: none;
     font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
@@ -134,10 +164,10 @@ code[class=jsx] {
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.5;
+    line-height: 1.75;
     margin-bottom: 0;
     -moz-tab-size: 4;
-    font-size: 1.7rem;
+    font-size: 2.1rem;
 }
 
 @media (max-width: 1100px) {
