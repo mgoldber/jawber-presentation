@@ -13,25 +13,27 @@
     <header>
         <img src="http://assets.hackeryou.com/hackeryou-logo.svg" alt="HackerYou red square logo." class="logo">
         <img src="http://assets.hackeryou.com/hy-logo-text.svg" alt="HackerYou logo text: college of technology" class="logo-text">
-        <h1>JavaScript Workshop_</h1>
     </header>
 
+    <h1>JavaScript Workshop_</h1>
     <main>
         <!-- side nav -->
         <aside>
             <nav>
                 <ul>
                     <li>
-                        <a href="#">placeholder</a>
-                        <ul>
-                            <li><a href="#">some other stuff</a></li>
-                        </ul>
+                        <a href="#tools">Tools</a>
                     </li>
                     <li>
-                        <a href="#">placeholder</a>
+                        <a href="#intro-to-js">Intro to JavaScript</a>
+                            <ul>
+                                <li><a href="#whatIsIt">What is it?</a></li>
+                                <li><a href="#repl">REPL</a></li>
+                                <li><a href="#expressions">Expressions & Valuess</a></li>
+                            </ul>
                     </li>
                     <li>
-                        <a href="#">placeholder</a>
+                        <a href="#variables">Variables</a>
                     </li>
                     <li>
                         <a href="#">placeholder</a>
@@ -55,39 +57,128 @@
                 </div>
             </section><!-- wifi end -->
 
+            <!-- pre work section -->
             <section class="pre-work">
                 <h2>What to have ready:</h2>
                 <ul>
-                    <li><a class="big-text" href="http://www.sublimetext.com/3">Sublime Text</a> downloaded & installed</li>
-                    <li><a class="big-text" href="https://www.google.com/chrome/">Google Chrome</a> downloaded & installed</li>
+                    <li><a class="big-text" href="http://www.sublimetext.com/3" target="_blank">Sublime Text</a> downloaded & installed</li>
+                    <li><a class="big-text" href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> downloaded & installed</li>
                 </ul>
                 <h2>While you wait: </h2>
                 <ul>
                     <li><a href=""></a></li>
                     <li>Fun fun blog posts:
                         <ul>
-                            <li><a href="https://hackeryou.com/blog/five-reasons-you-should-learn-to-code-in-2018">Five Reasons You Should Learn to Code</a></li>
-                            <li><a href="https://hackeryou.com/blog/a-day-in-the-life-of-a-hackeryou-bootcamp-student">A Day in the Life of a HackerYou Bootcamp Student</a></li>
-                            <li><a href="https://hackeryou.com/blog/how-to-apply-for-the-canadaontario-job-grant">Learn to Code for Free Using Grants to Get the Government to Pay up to $10,000 of Your Course Cost</a></li>
-                            <li><a href="https://hackeryou.com/blog/making-a-career-change-into-tech-how-i-went-from-flight-attendant-to-web-developer-in-6-months">Making a Career Change into Tech: How I went from Flight Attendant to Web Developer in 6 months</a></li>
-                            <li><a href="https://hackeryou.com/blog/how-much-does-it-cost-to-go-to-hackeryou">Breaking Down Your Coding Budget: How Much Does it Cost to Go to HackerYou?</a></li>
+                            <li><a href="https://hackeryou.com/blog/five-reasons-you-should-learn-to-code-in-2018" target="_blank">Five Reasons You Should Learn to Code</a></li>
+                            <li><a href="https://hackeryou.com/blog/a-day-in-the-life-of-a-hackeryou-bootcamp-student" target="_blank">A Day in the Life of a HackerYou Bootcamp Student</a></li>
+                            <li><a href="https://hackeryou.com/blog/how-to-apply-for-the-canadaontario-job-grant" target="_blank">Learn to Code for Free Using Grants to Get the Government to Pay up to $10,000 of Your Course Cost</a></li>
+                            <li><a href="https://hackeryou.com/blog/making-a-career-change-into-tech-how-i-went-from-flight-attendant-to-web-developer-in-6-months" target="_blank">Making a Career Change into Tech: How I went from Flight Attendant to Web Developer in 6 months</a></li>
+                            <li><a href="https://hackeryou.com/blog/how-much-does-it-cost-to-go-to-hackeryou" target="_blank">Breaking Down Your Coding Budget: How Much Does it Cost to Go to HackerYou?</a></li>
                         </ul>
                     </li>
                 </ul>
-            </section>
+            </section><!--pre work end-->
 
             <h2>What we'll cover</h2>
             <p>This workshop will introduce the basics of JavaScript, and students will leave with a completed project!</p>
             <p>There is a ton to learn about JavaScript, and this is only the first step! If you want to learn more we would love to
             invite you to our continuing education courses. We've also included other learning resources at the end of these notes.</p>
 
+            <!-- get starated section -->
+            <section class="get-started" id="tools">
+                <h2 class="heading">Getting Started: Tools</h2>
+                <h3>Web Browser</h3>
+                <p>The main functionality of the browser is to present a web resource in the browser window.</p>
+
+                <p>Choose a modern web browser that supports current web standards and dev tools for a better experience.</p>
+
+                <h3>Developer Tools</h3>
+                <p>In Google Chrome and in other browsers, we can access the console, where we can test our JavaScript code right in the browser. Right-click / two-finger tap anywhere
+                on the browser and select Inspect, then in the top tab select Console.</p>
+                <ul>
+                    <li>Option 1: right-click / two-finger tap on a web page and select Inspect Element</li>
+                    <li>Option 2: Ctrl + Shift + I (PC) / Cmnd + Option + I (Mac)</li>
+                </ul>
+
+                <h3>Text Editor</h3>
+                <p>The Text Editor is used to write and test our code.</p>
+                <ul>
+                    <li>preinstalled editors (Notepad / TextEdit) don't include many features</li>
+                    <li>paid and free options include features such as colour highlighting and plugins for improving workflow</li>
+                    <li>some great options: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text </a>(unlimited free trial), <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>.</li>
+                </ul>
+                <div class="js-no-highlight">
+                    <pre><code>console.log("Hello friends!);</code></pre>
+                </div>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">console<span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello friends!"</span><span class="punctuation">);</span></code></pre>
+                </div>
+            </section><!-- get started end -->
+
+            <!-- Intro to JS section -->
+            <section class="intro-to-js" id="intro-to-js">
+                <h2 class="heading" id="whatIsIt">Intro to JavaScript</h2>
+                <h3>What is JavaScript?</h3>
+                <p>JavaScript is one of the most popular programming languages in the world and is the cool cousin of HTML and CSS.</p>
+                <p>Many companies have come to embrace JavaScript as their language of choice, Uber, Netflix, Ebay, Paypal, NASA, etc. </p>
+                <p>JavaScript allows us to create complex interactivity on our web pages, and really makes our web pages come alive.</p>
+
+                <!-- example projects -->
+                <div class="projects-container">
+                    <div class="project-example">
+                        <a href="http://keracodes.com/" target="_blank">
+                            <img src="assets/portfolio.jpg" alt="Portfolio website.">
+                            <div class="overlay">Porfolio</div>
+                        </a>
+                    </div>
+                    <div class="project-example">
+                        <a href="http://shangnihu.com/juicy-jostle/" target="_blank">
+                            <img src="assets/game.jpg" alt="Fruits tile matching games.">
+                            <div class="overlay">Game</div>
+                        </a>
+                    </div>
+                    <div class="project-example">
+                        <a  href="https://wayfarerapp-23437.firebaseapp.com/" target="_blank">
+                            <img src="assets/application.jpg" alt="Weather and travel maping application.">
+                            <div class="overlay">App</div>
+                        </a>
+                    </div>
+                </div>
+
+                <p>Think of your webpage like a house. The structure of the house would be the HTML (the beams, the boards, the
+                drywall),
+                the design would be the CSS (the paint, the flooring), and the functionality would be the JavaScript (the
+                lightswitch,
+                the plumbing).</p>
+
+                <div class="fun-fact">
+                    <p><span class="red-text">Fun Fact</span>: JavaScript is not related to the programming language <a href="https://www.java.com/en/download/faq/whatis_java.xml" target="_blank">Java</a>. Java is as similar to JavaScript as Ham is to Hamster.</p>
+                </div>
+
+                <h3 id="repl">REPL</h3>
+                <p>A REPL stands for read, evaluate, print, loop.</p>
+                <p>It is an interactive environment, where you can type instructions for the computer to <span class="bold">read</span>, <span class="bold">evaluate</span> it, <span class="bold">print</span> the result back to you, then make itself ready to take on another instruction, in a <span class="bold">loop</span>.</p>
+                <p>We've already seen a place where we have access to a JavaScript REPL, in the developer tools.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="punctuation">></span> 1 <span class="punctuation">+</span> 1
+2
+
+<span class="punctuation">></span> "cup" <span class="punctuation">+</span> "cakes"
+"cupcakes"</code></pre>
+                </div>
+
+                <h3 id="expressions">Expressions and Values</h3>
+                <p>The instructions we give is called an <span class="bold">expression</span>. 1 + 1 was our expression. It is any piece of code/instruction given to our computer that produces a value.</p>
+                <p>What the computer returns to us is called a <span class="bold">value</span>. 2 was our value. A value is a piece of data.</p>
+            </section><!-- intro to JS end -->
+
             <!-- variables section -->
-            <section class="variables">
+            <section class="variables" id="variables">
                 <h2 class="heading">Variables</h2>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword">let </span>potato</code><span class="punctuation"> = </span><span class="string">"potato"</span><span class="punctuation">;</span></pre>
                 </div>
-            </section>
+            </section><!--variables end-->
 
             <!-- functions section -->
             <section class="functions" id="functions">

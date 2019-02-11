@@ -11,7 +11,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 
+}
+
+section {
+    margin-bottom: 100px;
 }
 
 @font-face {
@@ -31,20 +36,43 @@ html {
 body {
     font-family: "Akkurat", sans-serif;
     padding: 20px;
+    line-height: 1.5;
 }
 
 .wrapper {
     width: 100%;
     max-width: 875px;
-    margin: 0 auto;
+    margin: 0 auto 0 50px;
+}
+
+.bold {
+    font-family: 'Akkurat Bold';
+    src: url('https://assets.hackeryou.com/Akkurat-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    font-size: 2.5rem;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+.fun-fact span {
+    font-family: "Akkurat Bold", "Open Sans", sans-serif;
+    font-weight: 700;
 }
 
 h1 {
-    font-family: "Akkurat Bold", "Open Sans", sans-serif;
     font-size: 7rem;
-    font-weight: 700;
-    margin: 10px 0;
+    margin: 10px 0 10px 20px;
 }
+
 
 h1::after {
     content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDkiIGhlaWdodD0iMTAyIiB2aWV3Qm94PSIwIDAgMTA5IDEwMiI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iI0YxNTc1MSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMjgxIj4KICAgICAgICA8cGF0aCBkPSJNLjcgNTcuMjdsNzUuNDE3IDEwLjZNMTYuNjczIDQ1LjIzNUw5Mi4wOSA1NS44MzRNMzIuNjQ2IDMzLjE5OGw3NS40MTYgMTAuNiIvPgogICAgPC9nPgo8L3N2Zz4K);
@@ -56,9 +84,7 @@ h1::after {
 }
 
 h2 {
-    font-family: "Akkurat Bold", "Open Sans", sans-serif;
     font-size: 4rem;
-    font-weight: 700;
     margin: 50px 0 10px;
     position: relative;
 }
@@ -77,6 +103,10 @@ h2::after {
     pointer-events: none;
 }
 
+h3 {
+    margin: 50px 0 0 0;
+}
+
 a {
     color: var(--hy-red);
     font-family: "Akkurat Bold", "Open Sans", sans-serif;
@@ -90,6 +120,10 @@ a:hover {
 }
 
 /* header styles */
+header {
+    display: flex;
+    align-items: flex-start;
+}
 .logo {
     width: 94px;
 }
@@ -103,7 +137,6 @@ a:hover {
 aside {
     position: sticky;
     top: -1px;
-    font-size: 18px;
     background-color: #f6f7f9;
     background-image: url(https://d33wubrfki0l68.cloudfront.net/8f64da5…/a4f29/static/dots-overlay.5646c5ce.png);
     background-position: 100% 100%;
@@ -113,6 +146,7 @@ aside {
     max-height: 100vh;
     overflow-y: scroll;
     max-width: 270px;
+    font-size: 2rem;
 }
 
 ul li {
@@ -120,7 +154,7 @@ ul li {
 }
 
 ul li ul li {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 /* main styles */
@@ -131,13 +165,58 @@ main {
     font-size: 2.5rem;
 }
 
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-example {
+    width: calc(100%/3 - 40px);
+    margin: 20px;
+    position: relative;
+}
+
+.overlay {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(0,0,0, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+    color: white;
+}
+
+.project-example:hover .overlay {
+    opacity: 1;
+}
+
+.fun-fact {
+    border: 3px dashed #FF686B;
+    padding: 15px 25px;
+    margin: 50px 0;
+}
+
+.fun-fact span {
+    font-size: 2.5rem;
+}
+
 /* code styles  💻  */
 /* code colors */
 .keyword{color: #ffa7c4;}
 .punctuation{color: #c792ea;}
 .string{color: #addb67;}
 .function-name{color: #ffcb8b;}
-.red-text{color: #FF686B;}
+.red-text{color: var(--hy-red);}
 .comment {color: rgb(131, 128, 128);}
 
 .js-highlight {
@@ -146,16 +225,15 @@ main {
     overflow: auto;
 }
 
-pre[class=jsx] {
-    padding: 20px 30px;
-    float: left;
+.js-no-highlight pre {
+    padding: 60px 30px 50px 30px;
     min-width: 100%;
 }
 
+.js-no-highlight pre,
 code[class=jsx],
+code span,
 span {
-    color: #E6DDFC;
-    background: none;
     font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
     -webkit-font-feature-settings: normal;
     font-feature-settings: normal;
@@ -170,11 +248,23 @@ span {
     font-size: 2.1rem;
 }
 
+pre[class=jsx] {
+    padding: 20px 30px;
+    float: left;
+    min-width: 100%;
+}
+
+code[class=jsx],
+span {
+    color: #E6DDFC;
+    background: none;
+}
+
 @media (max-width: 1100px) {
     .wrapper {
         width: 100%;
         max-width: 700px;
-        margin: 0 auto;
+        margin: 0 auto 0 20px;
     }
 }
 
@@ -187,5 +277,11 @@ span {
 
     aside {
         display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .project-example {
+        width: calc(100% - 40px);
     }
 }
