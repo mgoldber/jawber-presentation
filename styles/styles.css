@@ -221,6 +221,7 @@ main {
 
 .js-highlight {
     border-radius: 10px;
+    margin-top: 20px;
     background: #011627;
     overflow: auto;
 }
