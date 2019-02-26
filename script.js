@@ -1,6 +1,6 @@
 
 const meowFunction = function() {
-    let hey = "hello";
+    let hey = 8;
     return hey;
 }
 
