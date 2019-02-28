@@ -15,7 +15,7 @@
         <img src="http://assets.hackeryou.com/hy-logo-text.svg" alt="HackerYou logo text: college of technology" class="logo-text">
     </header>
 
-    <h1>JavaScript Workshop_</h1>
+    <h1 class="head-text">JavaScript Workshop_</h1>
     <main>
         <!-- side nav -->
         <aside>
@@ -34,24 +34,29 @@
                     </li>
                     <li>
                         <a href="#variables">Variables</a>
-                            <ul>
-                                <li><a href="#declaration">Declaring</a></li>
-                                <li><a href="#nameConventions">Naming</a></li>
-                                <li><a href="#asValues">As Values</a></li>
-                            </ul>
+                        <ul>
+                            <li><a href="#declaration">Declaring</a></li>
+                            <li><a href="#nameConventions">Naming</a></li>
+                            <li><a href="#asValues">As Values</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#types">Types</a>
                         <ul>
-                            <li><a href="#numbers">Numbers</a></li>
                             <li><a href="#strings">Strings</a></li>
                         </ul>
                     </li>
+                    <li><a href="#arrays">Arrays</a></li>
                     <li>
                         <a href="#functions">Functions</a>
                     </li>
                     <li>
                         <a href="#dom">The DOM</a>
+                        <ul>
+                            <li><a href="#access-dom">Accessing DOM</a></li>
+                            <li><a href="#event-listeners">Event Listeners</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -273,16 +278,16 @@
                     <li><span class="bold">Null</span> - value of nothing</li>
                     <li><span class="bold">Objects</span> - stores complex collections of data</li>
                 </ul>
-                <p>Today we'll be focusing on numbers and strings.</p>
+                <p>Today we'll be focusing on strings.</p>
 
-                <h3 id="numbers">Numbers</h3>
+                <!-- <h3 id="numbers">Numbers</h3>
                 <p>We've used numbers before, they can be decimaled, and negative.</p>
                     <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="punctuation">> </span>1
 <span class="punctuation">></span> 10.023
 <span class="punctuation">></span> -3</code></pre>
-                </div>
-
+                </div> -->
+<!--
                 <p>We can use operators on numbers, addition, subtraction, division, etc.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="punctuation">> </span>1 <span class="punctuation">+</span> 2
@@ -308,7 +313,7 @@
                             If you make a large pot of chili that can serve 20 people, and you eat 1/4 of that chili all by yourself. How many people can your remaining chili serve?
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <h3 id="strings">Strings</h3>
                 <p>We've seen strings as well, they are all characters including spaces.</p>
@@ -337,7 +342,7 @@
             </section><!-- end of types -->
 
             <!-- array -->
-            <section class="arrays">
+            <section class="arrays" id="arrays">
                 <h2 class="heading">Arrays</h2>
                 <p>What if we wanted to store a list containing many strings, or many numbers in one variable? We can do that with a built in JavaScript object, an Array.</p>
                 <p>An Array can hold as elements as you can dream of.</p>
@@ -529,13 +534,43 @@ weekDays<span class="punctuation">.</span><span class="function-name">forEach</s
 
             <!-- the dom -->
             <section id="dom">
-                <h2 class="heading">Interactions with the DOM</h2>
+                <h2 class="heading">The DOM</h2>
+                <p>Manipulating the elements we see on our page is one of the best parts about using JavaScript for web development. To learn how we can manipulate things we see on the page, let's learn about the DOM.</p>
 
-                <h3>The DOM</h3>
+                <h3>What is the DOM</h3>
+                <p>The DOM stands for <span class="bold">document object model</span>, it represents all the HTML elements on our page in a tree like structure. When we talk about using JavaScript to manipulate the DOM we are adding, removing, and changing functionality and style to elements on our page.</p>
+
+                <img src="https://hychalknotes.s3.amazonaws.com/Screen%20Shot%202019-02-28%20at%2012.46.28%20PM.png" alt="picture of the DOM">
+
+                <p>To access the DOM, we can use keyword <span class="bold">document</span>.</p>
+                <p>Let's type that into our browser's console and see what we get back!</p>
+
                 <!-- grabbing items -->
-                <!-- adding classes -->
+                <h3 id="access-dom">Grabbing Specific Elements from the DOM</h3>
+                <p>We can grab specific elements from the DOM using <span class="bold">.querySelector()</span> and <span class="bold">.querySelectorAll()</span>, these special functions are available on our <span class="bold">document</span>.</p>
+
+                <p>Let's try grabbing a few HTML elements from the page.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">"h1"</span><span class="punctuation">);</span>
+document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span
+    class="string">"p"</span><span class="punctuation">);</span></code></pre>
+                </div>
+
+                <p><span class="bold">document.querySelector( )</span> will return the first matched element found in the DOM. </p>
+                <p><span class="bold">document.querySelectorAll( )</span> will return all matched elements in a <span class="bold">nodeList</span>(kind of like an Array) </p>
+
+                <p>Theres a lot we can do to an element once we grab it from the DOM.</p>
 
                 <h3>Event Listeners</h3>
+                <p>Here comes an incredibly fun part of JavaScript, listening to user interactions with the elements on our page. 🎧</p>
+                <p>When a user clicks something, hovers over something, presses a key on their keyboard, these are all events we can listen for on DOM elements, and after we hear on of these events we can write code to react to these interactions!</p>
+
+                <p>We can listen for events on DOM elements using the <span class="bold">addEventListener( )</span> function.</p>
+
+
+
+
+
 
             </section><!--end of the dom-->
 
