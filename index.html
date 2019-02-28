@@ -34,12 +34,24 @@
                     </li>
                     <li>
                         <a href="#variables">Variables</a>
+                            <ul>
+                                <li><a href="#declaration">Declaring</a></li>
+                                <li><a href="#nameConventions">Naming</a></li>
+                                <li><a href="#asValues">As Values</a></li>
+                            </ul>
                     </li>
                     <li>
-                        <a href="#">placeholder</a>
+                        <a href="#types">Types</a>
+                        <ul>
+                            <li><a href="#numbers">Numbers</a></li>
+                            <li><a href="#strings">Strings</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#">placeholder</a>
+                        <a href="#functions">Functions</a>
+                    </li>
+                    <li>
+                        <a href="#dom">The DOM</a>
                     </li>
                 </ul>
             </nav>
@@ -185,10 +197,10 @@
             <!-- variables section -->
             <section class="variables" id="variables">
                 <h2 class="heading">Variables</h2>
-                <p>One of the most useful parts of a programming language, is being able to store pieces of data, and use them later. We can store pieces of data in variables.</p>
+                <p>One of the most useful parts of a programming language, is being able to store pieces of data, and use them later 🔄. We can store pieces of data in variables.</p>
                 <p>A variable is like a little box in the head of a computer, where information can be stored for later and retrieved when needed.</p>
 
-                <h3>Declaring a Variable</h3>
+                <h3 id="declarations">Declaring a Variable</h3>
                 <p>We can delcare a variable with the special keyword <span class="bold">var</span>, which tells the computer, we are about to make a variable.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword">var </span>potato<span class="punctuation">;</span></code></pre>
@@ -212,27 +224,27 @@
 <span class="keyword">var </span>potatoCount<span class="punctuation"> = </span><span class="punctuation">12</span><span class="punctuation">;</span></code></pre>
                 </div>
 
-                <h3>Naming Conventions</h3>
+                <h3 id="nameConventions">Naming Conventions</h3>
                 <p>There are a few rules for naming our variables:</p>
                 <ul>
                     <li>
-                        Variable names cannott contain spaces.
+                        no spaces
                     </li>
                     <li>
-                        Variable names cannot start with a number. (<span class="bold">3potatoes</span> is invalid as a variable name)
+                        no starting with a number (<span class="bold">3potatoes</span> is invalid as a variable name)
                     </li>
                     <li>
-                        Variable names are case sensitive. A variable named <span class="bold">potato</span> and one named <span class="bold">Potato</span> are 2 completely different variables with different values.
+                        case sensitive. A variable named <span class="bold">potato</span> and one named <span class="bold">Potato</span> are 2 completely different variables with different values.
                     </li>
                     <li>
-                        Use Camel Case to separate words. (<span class="bold">northernPotatoFarmer</span>)
+                        use Camel Case to separate words (<span class="bold">northernPotatoFarmer</span>)
                     </li>
                     <li>
-                        Make your variable names descriptive. <span class="bold">var country</span> is much more desciptive than <span class="bold">var c</span>
+                        descriptive. <span class="bold">var country</span> is much more desciptive than <span class="bold">var c</span>
                     </li>
                 </ul>
 
-                <h3>Using Variables as Values</h3>
+                <h3 id="asValues">Using Variables as Values</h3>
                 <p>We saw that we can assign values to variables, but did you know that variables themselves, can be used as values?</p>
                                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword">var </span>myPotatoes<span class="punctuation"> = </span><span class="punctuation">2</span><span class="punctuation">;</span>
@@ -248,7 +260,7 @@
             </section><!--variables end-->
 
             <!-- types -->
-            <section>
+            <section id="types">
                 <h2 class="heading">Types</h2>
                 <p>We saw how variables hold values, pieces of data.</p>
                 <p>Each value in JavaScript is of a certain type. What type a piece of data is will determine what we can do with it in JavaScript.</p>
@@ -263,7 +275,7 @@
                 </ul>
                 <p>Today we'll be focusing on numbers and strings.</p>
 
-                <h3>Numbers</h3>
+                <h3 id="numbers">Numbers</h3>
                 <p>We've used numbers before, they can be decimaled, and negative.</p>
                     <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="punctuation">> </span>1
@@ -298,7 +310,7 @@
                     </ul>
                 </div>
 
-                <h3>Strings</h3>
+                <h3 id="strings">Strings</h3>
                 <p>We've seen strings as well, they are all characters including spaces.</p>
                 <p><span class="bold">They must be contained in '' or "" to be a valid string.</span></p>
                 <div class="js-highlight">
@@ -307,6 +319,7 @@
 <span class="punctuation">></span> <span class="string">'what?#!?%?'</span></code></pre>
                 </div>
 
+                <h3 id="concatination">String Concatination</h3>
                 <p>It might surprise you to know, that we can also add strings using the <span class="bold">"+"</span> operator!</p>
 
                 <div class="js-highlight">
@@ -315,6 +328,7 @@
 
 <span class="punctuation">> </span><span class="keyword">var </span>language <span class="punctuation">=</span> <span class="string">"JavaScript"</span><span class="punctuation">;</span>
 <span class="punctuation">> </span><span class="keyword">var </span>sentence <span class="punctuation">=</span> <span class="string">"I love "</span><span class="punctuation"> + </span> language <span class="punctuation">+</span> <span class="string">"!"</span><span class="punctuation">;</span>
+
 <span class="punctuation">> </span>sentence<span class="punctuation">;</span>
 <span class="string">"I love JavaScript!"</span>
 </code></pre>
@@ -325,22 +339,196 @@
             <!-- array -->
             <section class="arrays">
                 <h2 class="heading">Arrays</h2>
+                <p>What if we wanted to store a list containing many strings, or many numbers in one variable? We can do that with a built in JavaScript object, an Array.</p>
+                <p>An Array can hold as elements as you can dream of.</p>
+                <p>To create an Array, we utilize the <span class="bold">[ ]</span> square brackets and commas to separate each element.</p>
+                <div class="js-highlight">
+<pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span class="punctuation">];</span>
+
+<span class="keyword">var </span>bingoDraws <span class="punctuation">= [</span>8<span
+    class="punctuation">, </span>14<span class="punctuation">,</span> 2<span
+    class="punctuation">,</span> 3<span class="punctuation">,</span> 11<span class="punctuation">,</span> 21<span class="punctuation">,</span> 7<span
+    class="punctuation">];</span>
+</code></pre></div>
+
+            <p>There are many different ways to access values in an array and do something with them.</p>
+            <p>Let's learn about functions so we can dive into a cool way to access elements in an array.</p>
 
             </section><!--end of array-->
 
             <!-- functions section -->
             <section class="functions" id="functions">
                 <h2 class="heading">Functions</h2>
+                <p>Functions are chunks of code that can be called to run at anytime when they're called to action, and they perform a certain task.</p>
+                <p>Functions are possibly the most powerful concept in any programming language but especially in JavaScript. They allow you to unlock your powers as a JavaScript wizard.🔮💫</p>
+                <p><span class="bold">We are going to use functions today to:</span></p>
+                <ul>
+                    <li>grab HTML elements on our page</li>
+                    <li>add and remove CSS classes from them</li>
+                    <li>access values in arrays</li>
+                    <li>listen to events from users interacting with our page</li>
+                    <li>we'll be writing some of our own <span class="bold">custom</span> functions as well</li>
+                </ul>
+
+                <h3>Defining a Function</h3>
+                <p>A function is defined with the <span class="bold">function</span> keyword, followed by the name you would like to call your function, and then a set of <span class="bold">( )</span> and <span class="bold">{ }</span> brackets.</p>
+                <p></p>
                 <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">class </span><span class="function-name">myFunction </span><span class="punctuation">= </span><span class="keyword">function</span><span class="punctuation">() </span><span class="punctuation">{ </span>
-    <span class="keyword">return </span><span class="string">"Hello!"</span><span class="punctuation">;</span>
+                    <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">nameOfFunction</span><span class="punctuation">() </span><span class="punctuation">{</span> <span class="punctuation">}</span>
+
+<span class="keyword">function </span><span class="function-name">nameOfFunction</span><span class="punctuation">() </span><span class="punctuation">{ </span>
+    <span class="comment">// do things here</span>
 <span class="punctuation">}</span></code></pre>
                 </div>
+
+                <p>We can using a special built in function in JavaScript <span class="bold">console.log()</span> to print something to the user.</p>
+                <p>Let's work in our CodePen and try out some code.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello JavaScript Wizard!"</span><span
+        class="punctuation">)</span><span class="punctuation">;</span>
+</code></pre></div>
+
+                <p><span class="bold">console.log()</span> will log the thing we gave it in our console!</p>
+                <p>Lets put our <span class="bold">console.log()</span> into a function called <span class="bold">sayHiWizard()</span> </p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">sayHiWizard</span><span class="punctuation">() </span><span class="punctuation">{ </span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello JavaScript Wizard!"</span><span
+        class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></code></pre>
+                </div>
+
+            <p>Hmm.... 🤔 nothing gets logged out to the console this time.</p>
+            <p>This is because we can define a function at any time, but to actually use the function we've defined, we need to call it to action!</p>
+            <p>If we don't <span class="bold">call</span> our function, it will never run.</p>
+            <p>To call our function we use the function name, followed by a pair of <span class="bold">( )</span> brackets.</p>
+            <div class="js-highlight">
+                <pre class="jsx"><code class="jsx"><span class="function-name">sayHiWizard</span><span class="punctuation">();</span>  </code></pre>
+            </div>
+            <p>Like magic!</p>
+            <div class="js-highlight">
+                <pre class="jsx"><code class="jsx"><span class="comment">// defining a function</span>
+<span class="keyword">function </span><span class="function-name">lovePotatoes</span><span class="punctuation">() </span><span class="punctuation">{ </span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"I love potatoes so much!"</span><span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="comment">// calling a function</span>
+<span class="function-name">lovePotatoes</span><span class="punctuation">();</span></code></pre>
+            </div>
+
+            <div class="exercise">
+                <h3 class="red-text">Exercise: Writing Your Own Functions</h3>
+                <p>In CodePen, write the following function and call it:</p>
+                <ul>
+                    <li>
+                        Write a function that console logs out this sentence:
+                        <p class="bold">"Hi my name is [yourName], but they call me [nickName]."</p>
+                        Replace <span class="bold">[nickName]</span> and <span class="bold">[yourName]</span> with names that relate to you.
+                        <p class="function-name-ex1 red-text">Hi my name is <span class="bold"> Nicolas Cage</span>, but you can call me <span class="bold">The National Treasure</span>. <img src="https://www.placecage.com/200/100" alt=""> </p>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Parameter</h3>
+            <p>Instead of running the same code over and over again, we can give our functions a <span class="bold">parameter</span> as we define the function, so we can pass in different values to our functions during the function call.</p>
+            <p>If we can pass different values to work with each time into our functions, we have the power to reuse our functions in more situations!</p>
+            <p>To add a parameter to your function definition, pop the name of the param in between the ( ) brackets.</p>
+            <p>This name is completely up to you, it is just a placeholder for the values that will actually be passed in during a function call.</p>
+
+            <div class="js-highlight">
+            <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>potatoNum<span class="punctuation">) </span><span class="punctuation">{ </span>
+    <span class="comment">/* potatoNum is this function's param!</span>
+    <span class="comment"> we can now do something with the value of what is
+     passed in for potatoNum in our function */</span>
+<span class="punctuation">}</span>
+</code></pre>
+            </div>
+            <p>We can use <a href="#concatination"> string concatination</a> to console log out a sentence with our placeholder <span class="bold">potatoNum</span> that can hold any value!</p>
+            <div class="js-highlight">
+                <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>potatoNum<span class="punctuation">) </span><span class="punctuation">{ </span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"I'll have "</span> <span class="punctuation">+</span> potatoNum <span class="punctuation">+</span> <span class="string">" potatoes for dinner."</span><span
+            class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+<span class="comment">// lets pass in the number 8 where potatoNum is</span>
+<span class="punctuation">></span> <span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>8<span class="punctuation">);</span>
+<span class="string">"I'll have 8 potatoes for dinner."</span>
+
+<span class="comment">// we can also pass in a variable!</span>
+<span class="punctuation">></span> <span class="keyword">var</span> myPotatoCount <span class="punctuation">=</span> 52<span class="punctuation">;</span>
+<span class="punctuation">></span> <span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>myPotatoCount<span
+    class="punctuation">);</span>
+<span class="string">"I'll havee 52 potatoes for dinner."</span>
+</code></pre>
+            </div>
+
+
+
+
+
+            <div class="exercise">
+                <h3 class="red-text">Exercise: Functions with a Parameter</h3>
+                <p>In CodePen, write the following function and call it:</p>
+                <ul>
+                    <li>
+                        Write a function that takes in 1 parameter, <span class="bold">numCats</span> and console.logs out:
+                        <p class="bold">"Hi I love cats. In fact I own [numCats] cats."</p>
+                        <p>To begin, store the number of cats you own as a number in a variable called <span class="bold">myNumOfCats</span> outside of your function definition.</p>
+                        <p>In the function definition, use <a href="#concatination"> string concatination</a> to put your parameter <span class="bold">numCats</span> into the full string above, and console log out this full string.</p>
+                        <p>Call your function with <span class="bold">myNumOfCats</span> passed in the ( ) brackets.</p>
+                        <div class="cat-container">
+                            <img src="https://hychalknotes.s3.amazonaws.com/wilfred-cat-js-basics.jpg" alt="picture of white cat">
+                            <img src="https://hychalknotes.s3.amazonaws.com/lil-bub-cat-js-basics.png" alt="picture of carpet cat lil bubs">
+                            <img src="https://hychalknotes.s3.amazonaws.com/toothless-cat-js-basics.jpg" alt="black furry cat mound with giant green eyes">
+                            <img src="https://hychalknotes.s3.amazonaws.com/molly-cat-js-basics.jpg" alt="yellow shorthair with giant eye balls">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>For Each</h3>
+            <p>There are many different ways to access values in an array, today we'll look at a special function that is available on all Arrays in JavaScript, the <span class="bold">.forEach()</span> function.</p>
+            <p><span class="bold">.forEach()</span> is attached to any array you want to call it on. In the ( ) brackets we can pass in a function as a parameter, and <span class="bold">forEach()</span> runs that function on every single item in the array.</p>
+            <div class="js-highlight">
+                <pre class="jsx"><code class="jsx"><span class="keyword">var</span> someArray <span class="punctuation">= [</span>1, 4, 6, 2, 17<span class="punctuation">];</span>
+
+someArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="comment">/* pass in function here */</span><span class="punctuation">);</span> </code></pre>
+            </div>
+
+            <p>We can define the function we want to run right in the ( ) brackets.</p>
+            <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span
+                        class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span
+                        class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span
+                        class="punctuation">];</span>
+
+weekDays<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword"> function</span><span class="punctuation">(</span>day<span class="punctuation">) </span><span class="punctuation">{ </span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>day<span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">});</span> </code></pre>
+                </div>
+
+                <p>Or we can also pass in the name of a function that we've already defined in our code.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span
+                        class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span
+                        class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span
+                        class="punctuation">];</span>
+
+<span class="keyword">function</span> <span class="function-name">logOutDays</span><span class="punctuation">(</span>dayToLog<span class="punctuation">) {</span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>dayToLog<span
+        class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+
+weekDays<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span>logOutDays<span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p>Both chunks of code will create the same result! They are just different ways accomplish the same things.</p>
+
             </section><!-- functions end -->
 
 
             <!-- the dom -->
-            <section>
+            <section id="dom">
                 <h2 class="heading">Interactions with the DOM</h2>
 
                 <h3>The DOM</h3>

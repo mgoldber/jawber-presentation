@@ -141,11 +141,12 @@ aside {
     background-image: url(https://d33wubrfki0l68.cloudfront.net/8f64da5…/a4f29/static/dots-overlay.5646c5ce.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
-    padding: 0 20px;
-    margin-left: 20px;
+    padding-left: 0;
+    padding-right: 20px;
+    margin-left: 10px;
     max-height: 100vh;
     overflow-y: scroll;
-    max-width: 270px;
+    min-width: 190px;
     font-size: 2rem;
 }
 
@@ -216,6 +217,11 @@ main {
     padding-top: 10px;
 }
 
+.function-name-ex1 {
+    border: 3px dashed #FF686B;
+    padding: 20px;
+}
+
 .cora {
     max-width: 350px;
     margin-top: 20px;
@@ -224,12 +230,26 @@ main {
     border: 3px dashed #FF686B;
 }
 
+.cat-container {
+    padding: 10px;
+    border: 3px dashed #FF686B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cat-container img {
+    width: 23%;
+    height: auto;
+}
+
 /* code styles  💻  */
 /* code colors */
 .keyword{color: #ffa7c4;}
 .punctuation{color: #c792ea;}
 .string{color: #addb67;}
 .function-name{color: #ffcb8b;}
+.object{color: #9AC3EF;}
 .red-text{color: var(--hy-red);}
 .comment {color: rgb(131, 128, 128);}
 
@@ -275,19 +295,24 @@ span {
     background: none;
 }
 
-@media (max-width: 1100px) {
-    .wrapper {
-        width: 100%;
-        max-width: 700px;
+@media (max-width: 1165px) {
+    .wrapper{
         margin: 0 auto 0 20px;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1125px) {
     .wrapper {
-        width: calc(100% - 20px);
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 950px) {
+    .wrapper {
+        width: calc(100% - 60px);
         max-width: 100%;
-        margin: 0 10px;
+        margin: 0 30px;
     }
 
     aside {
