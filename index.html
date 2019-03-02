@@ -26,11 +26,6 @@
                     </li>
                     <li>
                         <a href="#intro-to-js">Intro to JavaScript</a>
-                            <ul>
-                                <li><a href="#whatIsIt">What is it?</a></li>
-                                <li><a href="#repl">REPL</a></li>
-                                <li><a href="#expressions">Expressions & Values</a></li>
-                            </ul>
                     </li>
                     <li>
                         <a href="#variables">Variables</a>
@@ -49,13 +44,18 @@
                     <li><a href="#arrays">Arrays</a></li>
                     <li>
                         <a href="#functions">Functions</a>
+                        <ul>
+                            <li><a href="#defining">Defining</a></li>
+                            <li><a href="#parameter">Parameter</a></li>
+                            <li><a href="#for-each">forEach</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#dom">The DOM</a>
                         <ul>
                             <li><a href="#access-dom">Accessing DOM</a></li>
                             <li><a href="#event-listeners">Event Listeners</a></li>
-                            <li><a href=""></a></li>
+                            <li><a href="#codealong-start">Codealong</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -135,7 +135,7 @@
 
                 <h3>Code Pen</h3>
                 <p>Let's take a look at the project we will be building today.</p>
-                <p><a href="https://codepen.io/tiffnogueira/live/YBbOzJ">View the completed project in full page here</a> and we can take a look at the code <a href="https://codepen.io/tiffnogueira/pen/YBbOzJ?editors=0010">here</a>.</p>
+                <p><a href="https://codepen.io/tiffnogueira/live/YBbOzJ" target="_blank">View the completed project in full page here</a> and we can take a look at the code <a href="https://codepen.io/tiffnogueira/pen/YBbOzJ?editors=0010" target="_blank">here</a>.</p>
                 <p>Once you save the pen, you unlock a few extra features. You get even more features if you verify your email address! I
                 would recommend doing that now!</p>
                 <p>We're going to <a href="">"fork" a starter file</a> that has all of the necessary text, image links, and colours for our project
@@ -205,7 +205,7 @@
                 <p>One of the most useful parts of a programming language, is being able to store pieces of data, and use them later 🔄. We can store pieces of data in variables.</p>
                 <p>A variable is like a little box in the head of a computer, where information can be stored for later and retrieved when needed.</p>
 
-                <h3 id="declarations">Declaring a Variable</h3>
+                <h3 id="declaration">Declaring a Variable</h3>
                 <p>We can delcare a variable with the special keyword <span class="bold">var</span>, which tells the computer, we are about to make a variable.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword">var </span>potato<span class="punctuation">;</span></code></pre>
@@ -375,7 +375,7 @@
                     <li>we'll be writing some of our own <span class="bold">custom</span> functions as well</li>
                 </ul>
 
-                <h3>Defining a Function</h3>
+                <h3 id="defining">Defining a Function</h3>
                 <p>A function is defined with the <span class="bold">function</span> keyword, followed by the name you would like to call your function, and then a set of <span class="bold">( )</span> and <span class="bold">{ }</span> brackets.</p>
                 <p></p>
                 <div class="js-highlight">
@@ -434,7 +434,7 @@
                 </ul>
             </div>
 
-            <h3>Parameter</h3>
+            <h3 id="parameter">Parameter</h3>
             <p>Instead of running the same code over and over again, we can give our functions a <span class="bold">parameter</span> as we define the function, so we can pass in different values to our functions during the function call.</p>
             <p>If we can pass different values to work with each time into our functions, we have the power to reuse our functions in more situations!</p>
             <p>To add a parameter to your function definition, pop the name of the param in between the ( ) brackets.</p>
@@ -491,7 +491,7 @@
                 </ul>
             </div>
 
-            <h3>For Each</h3>
+            <h3 id="for-each">For Each</h3>
             <p>There are many different ways to access values in an array, today we'll look at a special function that is available on all Arrays in JavaScript, the <span class="bold">.forEach()</span> function.</p>
             <p><span class="bold">.forEach()</span> is attached to any array you want to call it on. In the ( ) brackets we can pass in a function as a parameter, and <span class="bold">forEach()</span> runs that function on every single item in the array.</p>
             <div class="js-highlight">
@@ -561,11 +561,77 @@ document<span class="punctuation">.</span><span class="function-name">querySelec
 
                 <p>Theres a lot we can do to an element once we grab it from the DOM.</p>
 
-                <h3>Event Listeners</h3>
+                <h3 id="event-listeners">Event Listeners</h3>
                 <p>Here comes an incredibly fun part of JavaScript, listening to user interactions with the elements on our page. 🎧</p>
                 <p>When a user clicks something, hovers over something, presses a key on their keyboard, these are all events we can listen for on DOM elements, and after we hear on of these events we can write code to react to these interactions!</p>
 
-                <p>We can listen for events on DOM elements using the <span class="bold">addEventListener( )</span> function.</p>
+                <p>We can listen for events on DOM elements using the <span class="bold">.addEventListener( )</span> function.</p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"event"</span><span class="punctuation">,</span> functionToRun<span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p><span class="bold">.addEventListener( )</span> takes 2 things in between the ( ) brackets, the event we want to listen for, and the function we want to run when the event has been heard.</p>
+
+                <h3 class="codealong-start" id="codealong-start">Codealong</h3>
+
+                <p><span class="red-text">Let's go into our CodePen </span>and add an event listener to the <span class="bold">document</span> to listen for the <span class="bold">keydown</span> event, which will listen to everytime a key on the keyboard is pressed down.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword">function</span><span class="punctuation">(){</span>
+    <span class="comment">/* code to run here when
+    "keydown" event is heard */</span>
+<span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p>In our function that we passed in, let's make it log out to our console in CodePen that a key was pressed down, to see the event listener working.</p>
+                <div class="js-highlight"><pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword">function</span><span class="punctuation">(){</span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span
+        class="string">"A key was pressed down!"</span><span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p>Now that we know when any key is pressed, we want to know exactly <span class="bold">which</span> key is pressed. </p>
+
+                <p>The function we pass into <span class="bold">.addEventListener()</span> can optionally give us access to the event, that is triggering it to run. We can gain access to the event that triggered the function by passing in the event between the ( ) brackets of the function.</p>
+                <p>We can use <span class="bold">e</span> to stand for event. Let's console log out e to see what it is, and what information it holds.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>e<span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre></div>
+
+                <p>When we open Keyboard Event object in our console we can see a bunch of different properties that we have access to. </p>
+                <p>Find the <span class="bold">"key"</span> property, it's value should be the key that you pressed! 🤯 Now look for the <span class="bold">"keyCode"</span> property, what is that?</p>
+
+                <p>Every single one of your keys has a numeric keycode number that represents it. Go to <a href="http://keycode.info/" target="_blank">keycode.info</a> and press any key to see that specific key's keycode value.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>e<span class="punctuation">.</span><span class="keyword">keyCode</span><span class="punctuation">)</span><span class="punctuation">;</span>
+<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
+                </div>
+                <p>This is super useful, because in our HTML, we have audio elements that have an id matched with a specific keycode for a certain key. You'll notice that each of our div elements that hold the visual representation of each.</p>
+                <p>Let's store our keycode in a variable.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
+    <span class="keyword">var</span> keyCode <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">keyCode</span><span class="punctuation">;</span>
+<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p>Now that we know which key is being pressed, lets grab the appropriate audio element from the DOM so that we can play on keydown!</p>
+                <p>Inside of our event listener let's select correct DOM element using string concatination and the keycode, passing those in as a string into <span class="bold">document.querySelector( )</span>.</p>
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="keyword">var</span> audio <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">"audio[id='"</span> <span class="punctuation">+ </span>keyCode <span class="punctuation">+ </span><span class="string">"']"</span><span class="punctuation">);</span>
+<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>audio<span class="punctuation">)</span><span class="punctuation">;</span></span> </code></pre>
+                </div>
+
+                <p>Now each time we press down on a key we see the actual audio element from our DOM. We can play an audio element in JavaScript using the <span class="bold">.play( )</span> function. </p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">audio<span class="punctuation">.</span><span class="function-name">play</span><span class="punctuation">();</span> </code></pre>
+                </div>
+
+
+
+
 
 
 

@@ -63,9 +63,14 @@ h1,
 h2,
 h3,
 h4,
-.fun-fact span {
+.fun-fact span,
+.codealong-start {
     font-family: "Akkurat Bold", "Open Sans", sans-serif;
     font-weight: 700;
+}
+
+.codealong-start {
+    font-size: 28px;
 }
 
 h1 {
@@ -147,15 +152,16 @@ aside {
     max-height: 100vh;
     overflow-y: scroll;
     min-width: 190px;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
+
 ul li {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 ul li ul li {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 /* main styles */
