@@ -593,7 +593,7 @@ document<span class="punctuation">.</span><span class="function-name">querySelec
                 <p>Now that we know when any key is pressed, we want to know exactly <span class="bold">which</span> key is pressed. </p>
 
                 <p>The function we pass into <span class="bold">.addEventListener()</span> can optionally give us access to the event, that is triggering it to run. We can gain access to the event that triggered the function by passing in the event between the ( ) brackets of the function.</p>
-                <p>We can use <span class="bold">e</span> to stand for event. Let's console log out e to see what it is, and what information it holds.</p>
+                <p>We can use <span class="bold">e</span> to stand for event. Let's copy and paste the code below into the browser console, to see what <span class="bold">e</span> is, and what information it holds.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
     <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>e<span class="punctuation">)</span><span class="punctuation">;</span>
@@ -629,7 +629,107 @@ document<span class="punctuation">.</span><span class="function-name">querySelec
                     <pre class="jsx"><code class="jsx">audio<span class="punctuation">.</span><span class="function-name">play</span><span class="punctuation">();</span> </code></pre>
                 </div>
 
+                <p>If we hit a key that has a longer sound like <span class="bold">[S]</span> we'll notice that even if we press it again we won't hear the sound play again until the audio file is finished playing.</p>
+                <p>Well, we want to spam our drum kit 🤟🏻. There is a special property called <span class="bold">.currentTime</span> that is available on our audio element that allows us to set the current position; in seconds, of our audio playback.</p>
+                <p>If we set the currentTime of audio back to 0 everytime before we play it, then we won't have to wait for the audio to finish playing before playing it again!</p>
 
+                <div class="js-highlight">
+                    <pre
+                        class="jsx"><code class="jsx">audio<span class="punctuation">.</span><span class="keyword">currentTime </span><span class="punctuation">=</span> 0<span class="punctuation">;</span> </code></pre>
+                </div>
+
+                <p>Our drum kit is working swimmingly!</p>
+                <p>Let's work on getting our keys lit every time they're pressed by ways of adding and taking away some CSS classes on our DOM elements.</p>
+
+                <p>Inside of our keydown event listener let's grab the visual representation of our keys from the DOM, and console out log out those elements.</p>
+
+                <div class="js-highlight"><pre class="jsx"><code class="jsx"><span class="keyword">var</span> key <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">".key[id='"</span> <span class="punctuation">+ </span>keyCode <span class="punctuation">+ </span><span class="string">"']"</span><span class="punctuation">);</span>
+
+<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>key<span class="punctuation">)</span><span class="punctuation">;</span></span> </code></pre></div>
+
+                <p>We should see something like this come up in our console.logs.</p>
+                <img src="assets/key-dom-element.png" alt="CodePen console log of key DOM elements">
+
+                <p>On this DOM element we want to add a class of <span class="bold">playing</span> when we press down on the key corresponding to the element's ID. Check out the <span class="bold">playing</span> class in our CSS.</p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">key<span class="punctuation">.</span><span class="keyword">classList</span><span class="punctuation">.</span><span class="function-name">add</span><span class="punctuation">(</span><span class="string">"playing"</span><span class="punctuation">);</span> </code></pre>
+                </div>
+
+                <p>Hmm... our keys are now getting styled on keydown but it looks like this class is never taken off and reset.</p>
+
+                <p>If we take a look at our css for the element with a class of <span class="bold">key</span> on it, we can see that there is a transition property that lasts 0.12 seconds which creates a nice little transition for our key when pressed.</p>
+
+                <p>We want to listen for when this transition has finished on all the elements on our DOM that have a class of <span class="bold">key</span>.</p>
+
+                <p>To accomplish this, we need to grab all the elements from our DOM with a class of <span class="bold">key</span>, add an event listener on to each one (maybe with the .forEach() function?), and when the transition end even has been heard, remove the class <span class="bold">playing</span> from that specific <span class="bold">key</span> element. </p>
+
+                <p>Lets begin by grabbing the node list of DOM elements using <span class="bold">.querySelectorAll()</span>. </p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
+
+<span class="comment">/* view this console log in
+the browser's console, it's a
+bit too big for code pen's console! */</span>
+<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
+    class="punctuation">(</span>keysNodelist<span class="punctuation">)</span><span class="punctuation">;</span></span></code></pre>
+                </div>
+
+                <p>We should see something like this in our browser's consoles.</p>
+                <img src="assets/node-list.png" alt="Chrome Browser console's nodeList log">
+
+                <p>This is a NodeList, very similar to an Array but not quite! We won't have access to special Array methods in JavaScript
+                with a NodeList.</p>
+                <p>We can turn this NodeList into an Array so we can access each element using special Array methods.</p>
+
+                <div class="js-highlight">
+                    <pre
+                        class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
+<span class="keyword">var</span> keysArray <span class="punctuation">=</span> <span class="object">Array</span><span
+    class="punctuation">.</span><span class="function-name">from</span><span
+    class="punctuation">(</span>keysNodeList<span class="punctuation">);</span>
+
+<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>keysArray<span class="punctuation">);</span></code></pre>
+                </div>
+
+                <p>Now let's access every element in the <span class="bold">keysArray</span> using <span class="bold">.forEach()</span>.</p>
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
+    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
+        class="punctuation">(</span>key<span class="punctuation">);</span>
+<span class="punctuation">});</span> </code></pre>
+                </div>
+
+                <p>Now that we have each key, lets attach an event listener to every key, and listen for the end of the transition that was applied on the CSS of our key elements.</p>
+                <p>Lets console log out the target of the event, which is the element that caused the event. This will return to us our <span class="bold">key</span> that we
+                were listening on. We can do this using <span class="bold">e.target</span>.
+
+                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
+    key<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"transitionend"</span><span class="punctuation">, </span><span class="keyword">function</span><span class="punctuation">(</span>e<span class="punctuation">) {</span>
+        <span class="keyword">var</span> key <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">target</span><span class="punctuation">;</span>
+        <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
+        class="punctuation">(</span>key<span class="punctuation">);
+    });</span>
+<span class="punctuation">});</span> </code></pre>
+                </div>
+
+                <p>Now that we have the key, and we know the transition on that key has ended, we can remove the class of <span class="bold">playing</span> from the key's class list.</p>
+
+                                <div class="js-highlight">
+                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
+    key<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"transitionend"</span><span class="punctuation">, </span><span class="keyword">function</span><span class="punctuation">(</span>e<span class="punctuation">) {</span>
+        <span class="keyword">var</span> key <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">target</span><span class="punctuation">;</span>
+        key<span class="punctuation">.</span><span class="keyword">classList</span><span class="punctuation">.</span><span class="function-name">remove</span><span
+        class="punctuation">(</span><span class="string">"playing"</span><span class="punctuation">);
+    });</span>
+<span class="punctuation">});</span> </code></pre>
+                </div>
+
+                <p>And there you have it! A drum kit that will jam on and on.</p>
+                <p>Feel free to share your personal link directly from CodePen to show anyone you'd like!</p>
 
 
 
