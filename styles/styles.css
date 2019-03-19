@@ -249,6 +249,12 @@ main {
     height: auto;
 }
 
+#additional .project-example{
+    margin: 0 auto;
+    width: 60%;
+    max-width: 400px;
+}
+
 /* code styles  💻  */
 /* code colors */
 .keyword{color: #ffa7c4;}
