@@ -58,7 +58,7 @@ app.addOne = (database, score) => {
     }
     setTimeout(() => {
         app.animateSubmit();
-    }, 100);
+    }, 250);
 }
 
 app.isInView = (element) => {
@@ -112,7 +112,7 @@ app.listenForClose = (e) => {
 
 app.listeners = () => {
     window.addEventListener('scroll', app.navigationHighlight);
-    document.querySelector('body').addEventListener('mouseleave', app.askForFeedback);
+    document.querySelector('#additional').addEventListener('mouseover', app.askForFeedback);
     window.addEventListener('keydown', app.listenForClose);
     document.querySelector('.close').addEventListener('click', app.closePopup);
     for (let i = 0; i < app.answer.length; i++) {
