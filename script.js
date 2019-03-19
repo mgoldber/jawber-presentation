@@ -1,20 +1,131 @@
 
-const meowFunction = function() {
-    let hey = 8;
+const app = {};
 
-    let meow = ["peaas", "cars"];
+app.answer = document.getElementsByClassName('answer');
 
+app.popup = true;
+
+app.config = () => {
+    const config = {
+        apiKey: "AIzaSyAQzkGJe_HYsdplQovyf5vAH0dxkXFRc50",
+        authDomain: "javascript-101.firebaseapp.com",
+        databaseURL: "https://javascript-101.firebaseio.com",
+        projectId: "javascript-101",
+        storageBucket: "javascript-101.appspot.com",
+        messagingSenderId: "160614381623"
+    };
+    firebase.initializeApp(config);
+    app.database = firebase.database();
+    app.score = app.database.ref('/date');
 }
 
-console.log("yes");
-var someArray = [1, 4, 6, 2, 17];
-someArray.forEach(/* pass in function here*/);
+app.getTheDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    console.log(month);
+    const fullDate = `${day}-${month}-${year}`;
+    return fullDate;
+}
 
-document.querySelector();
-
-keysArray.forEach(function (key) {
-    key.addEventListener("transitionend", function (e) {
-        var key = e.target;
-        key.classList.remove("playing");
+app.answerListener = (e) => {
+    const date = app.getTheDate();
+    const score = e.target.id;
+    const database = app.database.ref(`/date/${date}/${score}/`);
+    let oldScore;
+    database.once('value').then((snapshot) => {
+        oldScore = snapshot.val();
+        const newScore = oldScore + 1;
+        app.addOne(database, newScore);
     });
+}
+
+app.animateSubmit = () => {
+    const surveys = document.querySelectorAll('.question');
+    for (let i = 0; i < surveys.length; i = i + 1) {
+        surveys[i].innerHTML = `<p>🎉Thanks for your feedback!🎉</p>`;
+    }
+    setTimeout(() => {
+        app.closePopup();
+    }, 800);
+}
+
+app.addOne = (database, score) => {
+    database.set(score);
+    for (let i = 0; i < app.answer.length; i++) {
+        app.answer[i].classList.add('hidden');
+    }
+    setTimeout(() => {
+        app.animateSubmit();
+    }, 100);
+}
+
+app.isInView = (element) => {
+    const scroll = window.scrollY || window.pageYOffset;
+    const boundsTop = element.getBoundingClientRect().top + scroll;
+    const viewport = {
+        top: scroll,
+        bottom: scroll + window.innerHeight
+    }
+    const bounds = {
+        top: boundsTop,
+        bottom: boundsTop + element.clientHeight,
+    }
+    return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom)
+        || (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
+}
+
+app.navigationHighlight = () => {
+    const hooks = document.querySelectorAll('.hook');
+    hooks.forEach((hook) => {
+        const id = hook.id;
+        const listOfLinks = document.querySelectorAll(`a[href='#${id}']`);
+        if (app.isInView(hook)) {
+            listOfLinks.forEach((a) => {
+                a.classList.add('active');
+            });
+        } else {
+            listOfLinks.forEach((a) => {
+                a.classList.remove('active');
+            });
+        }
+    });
+}
+
+app.askForFeedback = () => {
+    if (app.popup) {
+        document.querySelector('#popup').className = 'popup show';
+    }
+}
+
+app.closePopup = () => {
+    document.querySelector('.popup').className = 'popup hidden';
+    app.popup = false;
+}
+
+app.listenForClose = (e) => {
+    if (e.keyCode === 27 || e.key === "Escape" || e.key === "`") {
+        app.closePopup();
+    }
+}
+
+app.listeners = () => {
+    window.addEventListener('scroll', app.navigationHighlight);
+    document.querySelector('body').addEventListener('mouseleave', app.askForFeedback);
+    window.addEventListener('keydown', app.listenForClose);
+    document.querySelector('.close').addEventListener('click', app.closePopup);
+    for (let i = 0; i < app.answer.length; i++) {
+        app.answer[i].addEventListener('click', app.answerListener, false);
+    }
+}
+
+app.init = () => {
+    app.config();
+    app.navigationHighlight();
+    app.listeners();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    app.init();
 });

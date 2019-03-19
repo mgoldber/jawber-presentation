@@ -301,6 +301,121 @@ span {
     background: none;
 }
 
+
+/* Footer Styles */
+.bottomFeed {
+    background: #f6f7f9;
+    background-image: url("https://d33wubrfki0l68.cloudfront.net/8f64da5937fb8fb829772507f6dd7e7f4a3b3a82/a4f29/static/dots-overlay.5646c5ce.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 50px;
+    margin: 50px 0;
+}
+
+footer {
+    text-align: center;
+}
+
+footer h3 {
+    font-size: 50px;
+}
+
+footer p,
+.popup p {
+    font-size: 20px;
+}
+
+footer button {
+    padding: 10px 25px;
+    transition: all 0.2s ease;
+}
+
+button {
+    background-color: #6c717d;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: all 1s ease;
+    border: 1px solid white;
+    letter-spacing: 1.2px;
+}
+
+button:hover {
+    background-color: #6f737b;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 400ms, opacity 410ms;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+i.fas {
+    font-size: 60px;
+}
+
+footer button:hover, .popup button:not(.close):hover {
+    background: #e44e48;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+	overflow: scroll;
+}
+
+.popup .form {
+    width: 80%;
+	max-width: 800px;
+	margin: 50px auto;
+	background: white;
+	padding: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.popup h3 {
+    font-size: 45px;
+    color: #e40015;
+    line-height: 1.2;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+	position: absolute;
+	font-weight: normal;
+	padding: 5px 10px;
+	top: 10px;
+    right: 10px;
+    background: none;
+    color: black;
+}
+
+.close i.fas {
+    font-size: 25px;
+}
+
+.close:hover {
+    color: grey;
+    background: none;
+}
+
+
 @media (max-width: 1165px) {
     .wrapper{
         margin: 0 auto 0 20px;
@@ -326,8 +441,42 @@ span {
     }
 }
 
+@media (max-width: 870px) {
+    .question {
+        flex-wrap: wrap;
+    }
+
+    .popup .form {
+        padding: 45px 35px 0px;
+    }
+
+    .popup h3 {
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    .popup p {
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 550px) {
+    html {
+        font-size: 50%;
+    }
+
     .project-example {
         width: calc(100% - 40px);
     }
+
+    .exercise {
+        padding: 15px
+    }
+
+
+    button {
+        display: block;
+        margin: 20px auto;
+    }
+
 }
