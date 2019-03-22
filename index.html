@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Basics</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://storage.pardot.com/427982/227149/hackeryou_icon.png" />
     <!-- FontAwesome: -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -29,6 +31,9 @@
                     </li>
                     <li>
                         <a href="#intro-to-js">Intro to JavaScript</a>
+                        <ul>
+                            <li><a href="#projectExamples">Project Examples</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#variables">Variables</a>
@@ -50,7 +55,6 @@
                         <ul>
                             <li><a href="#defining">Defining</a></li>
                             <li><a href="#parameter">Parameter</a></li>
-                            <li><a href="#for-each">forEach</a></li>
                         </ul>
                     </li>
                     <li>
@@ -153,10 +157,10 @@
                 <p>JavaScript allows us to create complex interactivity on our web pages, and really makes our web pages come alive.</p>
 
                 <!-- example projects -->
-                <div class="projects-container">
+                <div class="projects-container" id="projectExamples">
                     <div class="project-example">
-                        <a href="http://keracodes.com/" target="_blank">
-                            <img src="assets/portfolio.jpg" alt="Portfolio website.">
+                        <a href="http://diannalee.ca/#home" target="_blank">
+                            <img src="assets/portfolio.png" alt="Portfolio website.">
                             <div class="overlay">Porfolio</div>
                         </a>
                     </div>
@@ -214,12 +218,12 @@
                 </div>
 
                 <p>Our potato variable doesn't hold any value yet, it will return <span class="bold">undefined</span> if we call for it in the console.</p>
-                <p>To give our potato variable a value to hold, we can assign our variable a value using the <span class="bold">"="</span> operator.</p>
+                <p>To give our potato variable a value to hold, we can assign our variable a value using the <span class="bold">=</span> operator.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword"></span>potato</code><span class="punctuation"> = </span><span class="string">"potato"</span><span class="punctuation">;</span></pre>
                 </div>
 
-                <p>We can also change the value of our potato variable, we can <span class="bold">reassign</span> the value of a variable using the <span class="bold">"="</span> operator again.</p>
+                <p>We can also change the value of our potato variable, we can <span class="bold">reassign</span> the value of a variable using the <span class="bold">=</span> operator again.</p>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword"></span>potato</code><span class="punctuation"> = </span><span class="punctuation">5</span><span class="punctuation">;</span></pre>
                 </div>
@@ -327,7 +331,7 @@
                 </div>
 
                 <h3 id="concatination">String Concatination</h3>
-                <p>It might surprise you to know, that we can also add strings using the <span class="bold">"+"</span> operator!</p>
+                <p>It might surprise you to know, that we can also add strings using the <span class="bold">+</span> operator!</p>
 
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="punctuation">> </span><span class="string">"I love "</span><span class="punctuation"> +</span> <span class="string">"JavaScript"</span><span class="punctuation"> +</span> <span class="string">"!"</span><span class="punctuation">;</span>
@@ -470,7 +474,9 @@
             </div>
 
 
-
+            <div class="fun-fact">
+                <p><span class="red-text">Fun Fact</span>: JavaScript was created in 10 days only and when released, and was developed under the name </p>
+            </div>
 
 
             <div class="exercise">
@@ -493,7 +499,7 @@
                 </ul>
             </div>
 
-            <h3 id="for-each">For Each</h3>
+            <!-- <h3 id="for-each">For Each</h3>
             <p>There are many different ways to access values in an array, today we'll look at a special function that is available on all Arrays in JavaScript, the <span class="bold">.forEach()</span> function.</p>
             <p><span class="bold">.forEach()</span> is attached to any array you want to call it on. In the ( ) brackets we can pass in a function as a parameter, and <span class="bold">forEach()</span> runs that function on every single item in the array.</p>
             <div class="js-highlight">
@@ -529,7 +535,7 @@ weekDays<span class="punctuation">.</span><span class="function-name">forEach</s
 weekDays<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span>logOutDays<span class="punctuation">);</span> </code></pre>
                 </div>
 
-                <p>Both chunks of code will create the same result! They are just different ways accomplish the same things.</p>
+                <p>Both chunks of code will create the same result! They are just different ways accomplish the same things.</p> -->
 
             </section><!-- functions end -->
 
@@ -668,7 +674,7 @@ document<span class="punctuation">.</span><span class="function-name">querySelec
 
                 <p>Lets begin by grabbing the node list of DOM elements using <span class="bold">.querySelectorAll()</span>. </p>
 
-                <div class="js-highlight">
+                <!-- <div class="js-highlight">
                     <pre class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
 
 <span class="comment">/* view this console log in
@@ -683,32 +689,31 @@ bit too big for code pen's console! */</span>
 
                 <p>This is a NodeList, very similar to an Array but not quite! We won't have access to special Array methods in JavaScript
                 with a NodeList.</p>
-                <p>We can turn this NodeList into an Array so we can access each element using special Array methods.</p>
+                <p>We can turn this NodeList into an Array so we can access each element using special Array methods.</p> -->
 
                 <div class="js-highlight">
                     <pre
                         class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
 <span class="keyword">var</span> keysArray <span class="punctuation">=</span> <span class="object">Array</span><span
     class="punctuation">.</span><span class="function-name">from</span><span
-    class="punctuation">(</span>keysNodeList<span class="punctuation">);</span>
-
-<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>keysArray<span class="punctuation">);</span></code></pre>
+    class="punctuation">(</span>keysNodeList<span class="punctuation">);</span></code></pre>
                 </div>
 
-                <p>Now let's access every element in the <span class="bold">keysArray</span> using <span class="bold">.forEach()</span>.</p>
+                <p>Now we can access every element in the <span class="bold">keysArray</span> using <span class="bold">.forEach()</span> function and listen for the end of the transition that was applied on the CSS of our key elements.</p>
+                <p> When the transition end has been heard we can remove the class of <span class="bold">playing</span> from the key's class list.</p>
 
-                <div class="js-highlight">
+                <!-- <div class="js-highlight">
                     <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
     <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
         class="punctuation">(</span>key<span class="punctuation">);</span>
 <span class="punctuation">});</span> </code></pre>
-                </div>
+                </div> -->
 
-                <p>Now that we have each key, lets attach an event listener to every key, and listen for the end of the transition that was applied on the CSS of our key elements.</p>
+                <!-- <p>Now that we have each key, lets attach an event listener to every key, and listen for the end of the transition that was applied on the CSS of our key elements.</p>
                 <p>Lets console log out the target of the event, which is the element that caused the event. This will return to us our <span class="bold">key</span> that we
-                were listening on. We can do this using <span class="bold">e.target</span>.
+                were listening on. We can do this using <span class="bold">e.target</span>. -->
 
-                <div class="js-highlight">
+                <!-- <div class="js-highlight">
                     <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
     key<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"transitionend"</span><span class="punctuation">, </span><span class="keyword">function</span><span class="punctuation">(</span>e<span class="punctuation">) {</span>
         <span class="keyword">var</span> key <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">target</span><span class="punctuation">;</span>
@@ -718,7 +723,7 @@ bit too big for code pen's console! */</span>
 <span class="punctuation">});</span> </code></pre>
                 </div>
 
-                <p>Now that we have the key, and we know the transition on that key has ended, we can remove the class of <span class="bold">playing</span> from the key's class list.</p>
+                <p>Now that we have the key, and we know the transition on that key has ended, we can remove the class of <span class="bold">playing</span> from the key's class list.</p> -->
 
                                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
