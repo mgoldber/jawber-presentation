@@ -421,6 +421,26 @@ footer button:hover, .popup button:not(.close):hover {
     background: none;
 }
 
+.cody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cody img {
+    width: 25%;
+    margin-right: 50px;
+}
+
+.cody-text h4 {
+    margin-bottom: 0;
+}
+
+.cody-text {
+    margin-bottom: 20px;
+}
+
 
 @media (max-width: 1165px) {
     .wrapper{
@@ -463,6 +483,21 @@ footer button:hover, .popup button:not(.close):hover {
 
     .popup p {
         font-size: 18px;
+    }
+
+    .cody {
+        flex-direction: column;
+    }
+
+    .cody img {
+        margin-right: 0;
+        width: 40%;
+        max-width: 400px;
+        min-width: 180px;
+    }
+
+    .cody-text {
+        text-align: center;
     }
 }
 
