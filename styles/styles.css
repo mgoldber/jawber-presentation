@@ -155,6 +155,15 @@ aside {
     font-size: 1.8rem;
 }
 
+aside ul li ul li {
+    margin: 5px 0;
+    line-height: 1.2;
+}
+
+aside ul li {
+    line-height: 1.5;
+}
+
 
 ul li {
     margin-bottom: 7px;
