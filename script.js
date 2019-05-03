@@ -93,23 +93,6 @@ app.navigationHighlight = () => {
     });
 }
 
-app.askForFeedback = () => {
-    if (app.popup) {
-        document.querySelector('#popup').className = 'popup show';
-    }
-}
-
-app.closePopup = () => {
-    document.querySelector('.popup').className = 'popup hidden';
-    app.popup = false;
-}
-
-app.listenForClose = (e) => {
-    if (e.keyCode === 27 || e.key === "Escape" || e.key === "`") {
-        app.closePopup();
-    }
-}
-
 app.listeners = () => {
     window.addEventListener('scroll', app.navigationHighlight);
     document.querySelector('#additional').addEventListener('mouseover', app.askForFeedback);

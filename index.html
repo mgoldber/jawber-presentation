@@ -20,7 +20,7 @@
         <img src="http://assets.hackeryou.com/hy-logo-text.svg" alt="HackerYou logo text: college of technology" class="logo-text">
     </header>
 
-    <h1 class="head-text">JavaScript 101_</h1>
+    <h1 class="head-text">Mark n' Munch - Making an API</h1>
     <main>
         <!-- side nav -->
         <aside>
@@ -30,47 +30,25 @@
                         <a href="#tools">Tools</a>
                     </li>
                     <li>
-                        <a href="#intro-to-js">Intro to JavaScript</a>
-                        <ul>
-                            <li><a href="#projectExamples">Project Examples</a></li>
-                        </ul>
+                        <a href="#why">Why Do It?</a>
                     </li>
                     <li>
-                        <a href="#variables">Variables</a>
-                        <ul>
-                            <li><a href="#declaration">Declaring</a></li>
-                            <li><a href="#nameConventions">Naming</a></li>
-                        </ul>
+                        <a href="#started">Getting Started</a>
                     </li>
                     <li>
-                        <a href="#types">Types</a>
-                        <ul>
-                            <li><a href="#strings">Strings</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#arrays">Arrays</a></li>
-                    <li>
-                        <a href="#functions">Functions</a>
-                        <ul>
-                            <li><a href="#defining">Defining</a></li>
-                            <li><a href="#parameter">Parameter</a></li>
-                        </ul>
+                        <a href="#tools">Developing</a>
                     </li>
                     <li>
-                        <a href="#dom">The DOM</a>
-                        <ul>
-                            <li><a href="#access-dom">Accessing DOM</a></li>
-                            <li><a href="#event-listeners">Event Listeners</a></li>
-                            <li><a href="#codealong-start">Codealong</a></li>
-                        </ul>
+                        <a href="#gotchas">Gotchas</a>
                     </li>
                     <li>
-                        <a href="#additional">Extras</a>
-                        <ul>
-                            <li><a href="#count-calcula">Count Calcula</a></li>
-                            <li><a href="#courses">Courses</a> </li>
-                            <li><a href="#contact-cody">Contact</a> </li>
-                        </ul>
+                        <a href="#realism">Realism</a>
+                    </li>
+                    <li>
+                        <a href="#updating">Updating</a>
+                    </li>
+                    <li>
+                        <a href="#deployment">Deployment</a>
                     </li>
                 </ul>
             </nav>
@@ -80,139 +58,66 @@
         <!-- main notes -->
         <div class="wrapper">
 
-            <!-- wifi section -->
-            <section class="wifi">
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="red-text">wifi</span>: HackerYou
-<span class="red-text">password</span>: Thisishackeryou</code></pre>
-                </div>
-            </section><!-- wifi end -->
+            <h2 class="heading">Welcome to Mark n' Munch</h2>
+            <p></p>
+            <p></p>
 
-            <!-- pre work section -->
-            <section class="pre-work">
-                <h2>What to have ready:</h2>
-                <ul>
-                    <li>Sign up for a <a class="big-text" href="https://codepen.io/" target="_blank">CodePen</a> account</li>
-                    <li><a class="big-text" href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> downloaded & installed</li>
-                </ul>
-                <h2>While you wait: </h2>
-                <ul>
-                    <li>Check out some <a href="https://hackeryou.com/projects" target="_blank">projects</a> built in our Con-Ed JavaScript courses!</li>
-                </ul>
-            </section><!--pre work end-->
+            <h3>We are going to learn about making your own API for teaching purposes</h3>
 
-            <h2 class="heading">Welcome to HackerYou</h2>
-            <p>We've been teaching people to code since 2012 and we've mastered the practice of pairing our students with the perfect
-            material, and learning environment for the best results.</p>
-            <p>Don't just take our word for it, check out <a href="https://hackeryou.com/reviews" target="_blank">what some of our previous grads have to say</a>.</p>
-
-            <h3>Learn the World's Most In-Demand Programminng Language</h3>
-
-            <p>This session will give you a sneak peek into our <a href="https://hackeryou.com/courses/javascript" target="_blank">Continuing Education JavaScript Courses at HackerYou</a>. Whether in a
-            part-time or accelerated format, you’ll spend 36 in-class hours per course mastering curriculum that is regularly
-            updated to ensure you’re learning the best, most relevant programming topics.</p>
-            <p>This workshop will introduce some basics and snippets of what's possible with JavaScript, and students will leave with a completed project!</p>
+            <p>Our goal is to learn about building a scaleable and descriptive that is accurately
+            representative of APIs students may experience in the wild.</p>
 
             <!-- get starated section -->
             <section class="get-started" id="tools">
-                <h2 class="heading">Getting Started: Tools</h2>
-                <h3>Web Browser</h3>
-                <p>The main functionality of the browser is to present a web resource in the browser window.</p>
+                <h2 class="heading">Tools</h2>
+                <h3>NodeJS</h3>
+                <p>Node allows us to run JavaScript on the server. Node allows us to
+                    run our API, communicate with our database, and do everything build related.
+                </p>
 
-                <p>Choose a modern web browser that supports current web standards and dev tools for a better experience.</p>
+                <h3>MongoDB</h3>
+                <p>This is a popular and great choice for your Database since data is organized
+                    into documents, and these documents very closely resemble JavaScript objects.
+                </p>
 
-                <h3>Developer Tools</h3>
-                <p>In Google Chrome and in other browsers, we can access the console, where we can test our JavaScript code right in the browser. Right-click / two-finger tap anywhere
-                on the browser and select Inspect, then in the top tab select Console.</p>
-                <ul>
-                    <li>Option 1: right-click / two-finger tap on a web page and select Inspect Element</li>
-                    <li>Option 2: Ctrl + Shift + I (PC) / Cmnd + Option + I (Mac)</li>
-                </ul>
+                <h3>Mongoose</h3>
+                <p></p>
 
-                <h3>Text Editor</h3>
-                <p>The Text Editor is used to write and test our code.</p>
-                <ul>
-                    <li>preinstalled editors (Notepad / TextEdit) don't include many features</li>
-                    <li>paid and free options include features such as colour highlighting and plugins for improving workflow</li>
-                    <li>some great options: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text </a>(unlimited free trial), <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>.</li>
-                    <li><a href="https://codepen.io/" target="_blank">CodePen</a> is totally free and is a web editor. You can write HTML, CSS, and JavaScript and get a real-time preview. Best
-                    of all you can share what you've created for freeeee</li>
-                </ul>
+                <h3>JWT</h3>
+                <p></p>
+
+                <h3>Express</h3>
+                <p>This provides a clean way for handling HTTP requests and responses 
+                    without having to write too much confusing code on our own.
+                </p>
+    
                 <div class="js-no-highlight">
                     <pre><code>console.log("Hello friends!");</code></pre>
                 </div>
                 <div class="js-highlight">
                     <pre class="jsx"><code class="jsx">console<span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello friends!"</span><span class="punctuation">);</span></code></pre>
                 </div>
-
-                <h3>Code Pen</h3>
-                <p>Let's take a look at the project we will be building today.</p>
-                <p><a href="https://codepen.io/tiffnogueira/live/YBbOzJ" target="_blank">View the completed project in full page here</a> and we can take a look at the code <a href="https://codepen.io/tiffnogueira/pen/YBbOzJ?editors=0010" target="_blank">here</a>.</p>
-                <p>We're going to <a href="https://codepen.io/tiffnogueira/pen/vPGzoO" target="_blanks">"fork" a starter file</a> that has all of the necessary text, image links, and colours for our project
-                    today.</p>
-                <p>Once you save the pen, you unlock a few extra features. You get even more features if you verify your email address! I
-                would recommend doing that now!</p>
             </section><!-- get started end -->
 
-            <!-- Intro to JS section -->
-            <section class="intro-to-js" id="intro-to-js">
-                <h2 class="heading" id="whatIsIt">Intro to JavaScript</h2>
-                <h3>What is JavaScript?</h3>
-                <p>JavaScript is one of the most popular programming languages in the world and is the cool cousin of HTML and CSS.</p>
-                <p>Many companies have come to embrace JavaScript as their language of choice, Uber, Netflix, Ebay, Paypal, NASA, etc. </p>
-                <p>JavaScript allows us to create complex interactivity on our web pages, and really makes our web pages come alive.</p>
+            <!-- Why Do It section -->
+            <section class="intro-to-js" id="why">
+                <h2 class="heading" id="whatIsIt">Why Do It?</h2>
+                <h3>Control</h3>
+                <p>Relying on other people's APIs when teaching is tough. If the API goes down, 
+                    someone is having trouble getting their API key, or other problems arise, we
+                    are at the mercy of the API.
+                </p>
+                <p>With our own API, we can simply generate back up tokens, respond faster if the 
+                    API goes down, develop the API to meet our exact needs, and more!
+                </p>
 
-                <!-- example projects -->
-                <div class="projects-container" id="projectExamples">
-                    <div class="project-example">
-                        <a href="http://diannalee.ca/#home" target="_blank">
-                            <img src="assets/portfolio.png" alt="Portfolio website.">
-                            <div class="overlay">Porfolio</div>
-                        </a>
-                    </div>
-                    <div class="project-example">
-                        <a href="http://shangnihu.com/juicy-jostle/" target="_blank">
-                            <img src="assets/game.jpg" alt="Fruits tile matching games.">
-                            <div class="overlay">Game</div>
-                        </a>
-                    </div>
-                    <div class="project-example">
-                        <a  href="https://wayfarerapp-23437.firebaseapp.com/" target="_blank">
-                            <img src="assets/application.jpg" alt="Weather and travel maping application.">
-                            <div class="overlay">App</div>
-                        </a>
-                    </div>
-                </div>
+                <h3 id="repl">Style points</h3>
+                <p>It makes us look cool.</p>
 
-                <p>Think of your webpage like a house. The structure of the house would be the HTML (the beams, the boards, the
-                drywall),
-                the design would be the CSS (the paint, the flooring), and the functionality would be the JavaScript (the
-                lightswitch,
-                the plumbing).</p>
+            </section><!-- Why Do It section end -->
 
-                <div class="fun-fact">
-                    <p><span class="red-text">Fun Fact</span>: JavaScript is not related to the programming language <a href="https://www.java.com/en/download/faq/whatis_java.xml" target="_blank">Java</a>. Java is as similar to JavaScript as Ham is to Hamster.</p>
-                </div>
-
-                <h3 id="repl">REPL</h3>
-                <p>A REPL stands for read, evaluate, print, loop.</p>
-                <p>It is an interactive environment, where you can type instructions for the computer to <span class="bold">read</span>, <span class="bold">evaluate</span> it, <span class="bold">print</span> the result back to you, then make itself ready to take on another instruction, in a <span class="bold">loop</span>.</p>
-                <p>We've already seen a place where we have access to a JavaScript REPL, in the developer tools.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">></span> 1 <span class="punctuation">+</span> 1
-2
-
-<span class="punctuation">></span> "cup" <span class="punctuation">+</span> "cakes"
-"cupcakes"</code></pre>
-                </div>
-
-                <h3 id="expressions">Expressions and Values</h3>
-                <p>The instructions we give is called an <span class="bold">expression</span>. 1 + 1 was our expression. It is any piece of code/instruction given to our computer that produces a value.</p>
-                <p>What the computer returns to us is called a <span class="bold">value</span>. 2 was our value. A value is a piece of data.</p>
-            </section><!-- intro to JS end -->
-
-            <!-- variables section -->
-            <section class="variables" id="variables">
+            <!-- getting started section -->
+            <section class="variables" id="started">
                 <h2 class="heading">Variables</h2>
                 <p>One of the most useful parts of a programming language, is being able to store pieces of data, and use them later 🔄. We can store pieces of data in variables.</p>
                 <p>A variable is like a little box in the head of a computer, where information can be stored for later and retrieved when needed.</p>
@@ -274,7 +179,7 @@
                     <pre class="jsx"><code class="jsx"><span class="punctuation">> </span> ourPotatoes
 5</code></pre>
                 </div>
-            </section><!--variables end-->
+            </section><!--getting started section end-->
 
             <!-- types -->
             <section id="types">
@@ -803,63 +708,11 @@ bit too big for code pen's console! */</span>
                 </ol>
 
 
-                <h3>Thank you for joining us!</h3>
-                <div class="fun-fact" id="contact-cody">
-                    <p><span class="red-text">Questions? </span> Contact our <span class="bold">Student Success Coordinator:</span></p>
-                    <div class="cody">
-                        <img src="assets/cody.png" alt="Headshot of Cody McCallum">
-                        <div class="cody-text">
-                            <h4>Cody McCallum</h4>
-                            <p>Email me <a href="mailto:cody@hackeryou.com?subject=JS 101 Inquiry&body=Hi! I am a JavaScript 101 Workshop Attendee, and I had a few questions." target="_blank">here</a> 📫</p>
-                            <p>Check out more on our <a href="https://hackeryou.com/" target="_blank">website</a>  🖥️</p>
-                        </div>
-                    </div>
-                </div>
+                <h3>Thanks for lunching alongside the learning!</h3>
             </section>
 
         </div><!-- main notes end -->
     </main>
-
-
-    <footer class="bottomFeed hook" id="feedback">
-            <h3>How likely would you be to recommend this workshop to a friend?</h3>
-            <p>1 is absolutely not 😕, and 10 is absolutely 😍</p>
-            <div id="question" class="question">
-                <button id="1" class="answer">1</button>
-                <button id="2" class="answer">2</button>
-                <button id="3" class="answer">3</button>
-                <button id="4" class="answer">4</button>
-                <button id="5" class="answer">5</button>
-                <button id="6" class="answer">6</button>
-                <button id="7" class="answer">7</button>
-                <button id="8" class="answer">8</button>
-                <button id="9" class="answer">9</button>
-                <button id="10" class="answer">10</button>
-            </div>
-            <p class="thanks hidden">Thank you for your input!✨</p>
-    </footer>
-
-    <div class="popup hidden" id="popup">
-        <div class="form">
-            <button class="close"><i aria-label="Close" class="fas fa-times"></i></button>
-            <h3>How likely would you be to recommend this workshop to a friend?</h3>
-            <p>1 is absolutely not 😕, and 10 is absolutely 😍</p>
-            <div class="question">
-                <button id="1" class="answer">1</button>
-                <button id="2" class="answer">2</button>
-                <button id="3" class="answer">3</button>
-                <button id="4" class="answer">4</button>
-                <button id="5" class="answer">5</button>
-                <button id="6" class="answer">6</button>
-                <button id="7" class="answer">7</button>
-                <button id="8" class="answer">8</button>
-                <button id="9" class="answer">9</button>
-                <button id="10" class="answer">10</button>
-            </div>
-            <p class="thanks hidden">Thank you for your input!✨</p>
-        </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
