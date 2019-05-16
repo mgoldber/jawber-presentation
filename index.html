@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript 101</title>
+    <title>Mark n' Munch</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://storage.pardot.com/427982/227149/hackeryou_icon.png" />
@@ -64,7 +64,7 @@
 
             <h3>We are going to learn about making your own API for teaching purposes</h3>
 
-            <p>Our goal is to learn about building a scaleable and descriptive that is accurately
+            <p>Our goal is to learn about building a scaleable and descriptive API that is accurately
             representative of APIs students may experience in the wild.</p>
 
             <!-- get starated section -->
@@ -76,27 +76,24 @@
                 </p>
 
                 <h3>MongoDB</h3>
-                <p>This is a popular and great choice for your Database since data is organized
+                <p>This is a popular and great choice for your database since data is organized
                     into documents, and these documents very closely resemble JavaScript objects.
                 </p>
 
                 <h3>Mongoose</h3>
-                <p></p>
+                <p>Mongoose is utilized for our connection between Node and MongoDB. In addition, within our
+                    server file, mongoose is used to establish the connection to our database.
+                </p>
 
                 <h3>JWT</h3>
-                <p></p>
+                <p>This is a module that we can use to generate a randomized token for us. It also gives us some
+                    handy token validation methods.
+                </p>
 
                 <h3>Express</h3>
-                <p>This provides a clean way for handling HTTP requests and responses 
-                    without having to write too much confusing code on our own.
+                <p>This allows us to simplify our routing, and provides immensely helpful methods to keep our HTTP
+                    requests simplified and clean.
                 </p>
-    
-                <div class="js-no-highlight">
-                    <pre><code>console.log("Hello friends!");</code></pre>
-                </div>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">console<span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello friends!"</span><span class="punctuation">);</span></code></pre>
-                </div>
             </section><!-- get started end -->
 
             <!-- Why Do It section -->
@@ -118,67 +115,36 @@
 
             <!-- getting started section -->
             <section class="variables" id="started">
-                <h2 class="heading">Variables</h2>
-                <p>One of the most useful parts of a programming language, is being able to store pieces of data, and use them later 🔄. We can store pieces of data in variables.</p>
-                <p>A variable is like a little box in the head of a computer, where information can be stored for later and retrieved when needed.</p>
+                <h2 class="heading">Getting Started</h2>
+                <p>The hardest part is always getting started!</p>
 
-                <h3 id="declaration">Declaring a Variable</h3>
-                <p>We can delcare a variable with the special keyword <span class="bold">var</span>, which tells the computer, we are about to make a variable.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>potato<span class="punctuation">;</span></code></pre>
-                </div>
+                <h3 id="declaration">Server.js</h3>
+                <p>This is like the package.json file of the backend</p>
+                <p>This serves as the entry point for our API. Within here, we will set up necessary configurations, link the necessary segments of our API, and start the server and connection to our database.</p>
 
-                <p>Our potato variable doesn't hold any value yet, it will return <span class="bold">undefined</span> if we call for it in the console.</p>
-                <p>To give our potato variable a value to hold, we can assign our variable a value using the <span class="bold">=</span> operator.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword"></span>potato</code><span class="punctuation"> = </span><span class="string">"potato"</span><span class="punctuation">;</span></pre>
-                </div>
+                <h3 id="declaration">Middleware vs. Routes vs. Utils</h3>
+                <h4>Middleware</h4>
+                <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
+                <h4>Routes</h4>
+                <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
+                <h4>Utils</h4>
+                <p>This will hold our helper functions, as well as any constants that are required in our application.</p>
 
-                <p>We can also change the value of our potato variable, we can <span class="bold">reassign</span> the value of a variable using the <span class="bold">=</span> operator again.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword"></span>potato</code><span class="punctuation"> = </span><span class="punctuation">5</span><span class="punctuation">;</span></pre>
-                </div>
-                <p>Instead of the word "potato", our potato variable now holds the number 5, maybe to indicate how many potatos we have.</p>
-                <p>To declare a variable and assign it a value at the same time, we can put everything together onto 1 line.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>yellowPotato<span class="punctuation"> = </span><span class="string">"yukon gold"</span><span class="punctuation">;</span>
-<span class="keyword">var </span>alivePotato<span class="punctuation"> = </span><span class="string">"Mrs.Potato Head"</span><span class="punctuation">;</span>
-<span class="keyword">var </span>potatoCount<span class="punctuation"> = </span><span class="punctuation">12</span><span class="punctuation">;</span></code></pre>
-                </div>
+                <p>TODO: SCREENSHOT HERE SHOWING THE FOLDER STRUCTURE OF API WITH SUBFOLDERS OF MIDDLEWARE, ROUTES, AND UTILS</p>
 
-                <h3 id="nameConventions">Naming Conventions</h3>
-                <p>There are a few rules for naming our variables:</p>
-                <ul>
-                    <li>
-                        no spaces
-                    </li>
-                    <li>
-                        no starting with a number (<span class="bold">3potatoes</span> is invalid as a variable name)
-                    </li>
-                    <li>
-                        case sensitive. A variable named <span class="bold">potato</span> and one named <span class="bold">Potato</span> are 2 completely different variables with different values.
-                    </li>
-                    <li>
-                        use Camel Case to separate words (<span class="bold">northernPotatoFarmer</span>)
-                    </li>
-                    <li>
-                        descriptive. <span class="bold">var country</span> is much more desciptive than <span class="bold">var c</span>
-                    </li>
-                </ul>
+                <h3 id="declaration">Routes: Models, Routes, and Services</h3>
+                <h4>Models</h4>
+                <p>This is where we set up our schema. This maps to the way our information is stored in our database</p>
+                <p>TODO: SCREENSHOT HERE OF THE USER SCHEMA FROM SHOPAROO</p>
+                <p>TODO: POSSIBLY ALSO SCREENSHOT OF DATABASE DOCUMENT THAT MATCHES THIS SCHEMA</p>
+                <h4>Routes</h4>
+                <p>This will specify the logic that will happen when hitting different endpoints</p> 
+                <p>TODO: SCREENSHOT OF /SIGNUP AND THE ROUTER IMPORT</p>
+                <h4>Services</h4>
+                <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>               
+                <p>TODO: SCREENSHOT OF CREATEUSER FUNCTION IN SHOPAROO</p>
 
-                <h3 id="asValues">Using Variables as Values</h3>
-                <p>We saw that we can assign values to variables, but did you know that variables themselves, can be used as values?</p>
-                                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>myPotatoes<span class="punctuation"> = </span><span class="punctuation">2</span><span class="punctuation">;</span>
-<span class="keyword">var </span>yourPotatoes<span class="punctuation"> = </span><span class="punctuation">3</span><span class="punctuation">;</span>
-<span class="keyword">var </span>ourPotatoes<span class="punctuation"> = </span>myPotatoes <span class="punctuation">+</span> yourPotatoes<span class="punctuation">;</span></code></pre>
-                </div>
-
-                <p>Now <span class="bold">ourPotatoes</span> holds the value of 5.</p>
-                                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">> </span> ourPotatoes
-5</code></pre>
-                </div>
+                
             </section><!--getting started section end-->
 
             <!-- types -->
