@@ -118,17 +118,28 @@
                 <h2 class="heading">Getting Started</h2>
                 <p>The hardest part is always getting started!</p>
 
+                <p>I like to think about it by going through the whole flow of information from the front-end to the back-end.</p>
+
+                <h5>Front - Login.js</h5>
+                <img src="assets/axios_api_login_signup.png" alt="front-end call to users endpoint inside of try-catch block">
+
+                <h3 id="declaration">Routes vs. Middleware vs. Utils</h3>
+                <h4>Routes</h4>
+                <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
+
+                <h5>Back - userRoutes.js</h5>
+                <img src="assets/signup_route_userroutes.png" alt="signup route in userRoutes file">
+
+
+
+                <h4>Middleware</h4>
+                <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
+                <h4>Utils</h4>
+                <p>This will hold our helper functions, as well as any constants that are required in our application.</p>
+
                 <h3 id="declaration">Server.js</h3>
                 <p>This is like the package.json file of the backend</p>
                 <p>This serves as the entry point for our API. Within here, we will set up necessary configurations, link the necessary segments of our API, and start the server and connection to our database.</p>
-
-                <h3 id="declaration">Middleware vs. Routes vs. Utils</h3>
-                <h4>Middleware</h4>
-                <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
-                <h4>Routes</h4>
-                <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
-                <h4>Utils</h4>
-                <p>This will hold our helper functions, as well as any constants that are required in our application.</p>
 
                 <p>TODO: SCREENSHOT HERE SHOWING THE FOLDER STRUCTURE OF API WITH SUBFOLDERS OF MIDDLEWARE, ROUTES, AND UTILS</p>
 
@@ -143,60 +154,15 @@
                 <h4>Services</h4>
                 <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>               
                 <p>TODO: SCREENSHOT OF CREATEUSER FUNCTION IN SHOPAROO</p>
-
-                
             </section><!--getting started section end-->
 
             <!-- types -->
-            <section id="types">
-                <h2 class="heading">Types</h2>
-                <p>We saw how variables hold values, pieces of data.</p>
-                <p>Each value in JavaScript is of a certain type. What type a piece of data is will determine what we can do with it in JavaScript.</p>
-                <p>The different types that are available in JavaScript are:</p>
-                <ul>
-                    <li><span class="bold">Numbers</span> - 10, 0.3</li>
-                    <li><span class="bold">Strings</span> - "hi!", "5 pieces"</li>
-                    <li><span class="bold">Booleans</span> - true/false</li>
-                    <li><span class="bold">Undefined</span> - no value</li>
-                    <li><span class="bold">Null</span> - value of nothing</li>
-                    <li><span class="bold">Objects</span> - stores complex collections of data</li>
-                </ul>
-                <p>Today we'll be focusing on strings.</p>
-
-                <!-- <h3 id="numbers">Numbers</h3>
-                <p>We've used numbers before, they can be decimaled, and negative.</p>
-                    <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">> </span>1
-<span class="punctuation">></span> 10.023
-<span class="punctuation">></span> -3</code></pre>
-                </div> -->
-<!--
-                <p>We can use operators on numbers, addition, subtraction, division, etc.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">> </span>1 <span class="punctuation">+</span> 2
-3
-
-<span class="punctuation">></span> 10.03 <span class="punctuation">*</span> 3
-30.03
-
-<span class="punctuation">></span> 10 <span class="punctuation">/</span> 2 <span class="punctuation">+</span> 4
-9</code></pre>
-                </div>
-                <p>In terms of which operations happen first, BEDMAS, just as we have learned in grade school, applies. </p>
-
-                <div class="exercise">
-                    <h3 class="red-text">Exercise: JavaScript Arithmetic</h3>
-                    <p>Use your browser's console to find out:</p>
-                    <ul>
-                        <li>
-                            Cora the cat is 6 years old. How many seconds old is Cora?
-                            <img src="https://hychalknotes.s3.amazonaws.com/Screen%20Shot%202019-02-25%20at%205.13.06%20PM.png" alt="picture of fat cat cora" class="cora">
-                        </li>
-                        <li>
-                            If you make a large pot of chili that can serve 20 people, and you eat 1/4 of that chili all by yourself. How many people can your remaining chili serve?
-                        </li>
-                    </ul>
-                </div> -->
+            <section id="databases">
+                <h2 class="heading">Databases</h2>
+                <p>Thinking about database structure and how our collections relate will structure our code!</p>
+                <p>For example, the cart can have multiple cart items in an online store</p>
+                <p></p>
+                <p></p>
 
                 <h3 id="strings">Strings</h3>
                 <p>We've seen strings as well, they are all characters including spaces.</p>
