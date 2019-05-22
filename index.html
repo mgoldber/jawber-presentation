@@ -42,13 +42,10 @@
                         <a href="#gotchas">Gotchas</a>
                     </li>
                     <li>
-                        <a href="#realism">Realism</a>
+                        <a href="#deployment">Deployment</a>
                     </li>
                     <li>
                         <a href="#updating">Updating</a>
-                    </li>
-                    <li>
-                        <a href="#deployment">Deployment</a>
                     </li>
                 </ul>
             </nav>
@@ -59,8 +56,6 @@
         <div class="wrapper">
 
             <h2 class="heading">Welcome to Mark n' Munch</h2>
-            <p></p>
-            <p></p>
 
             <h3>We are going to learn about making your own API for teaching purposes</h3>
 
@@ -97,8 +92,8 @@
             </section><!-- get started end -->
 
             <!-- Why Do It section -->
-            <section class="intro-to-js" id="why">
-                <h2 class="heading" id="whatIsIt">Why Do It?</h2>
+            <section class="why" id="why">
+                <h2 class="heading" id="why">Why Do It?</h2>
                 <h3>Control</h3>
                 <p>Relying on other people's APIs when teaching is tough. If the API goes down, 
                     someone is having trouble getting their API key, or other problems arise, we
@@ -120,8 +115,13 @@
 
                 <p>I like to think about it by going through the whole flow of information from the front-end to the back-end.</p>
 
+                <img src="assets/step1.jpg" alt="diagram of front end connecting to back end with link between react and node circled">
+
                 <h5>Front - Login.js</h5>
                 <img src="assets/axios_api_login_signup.png" alt="front-end call to users endpoint inside of try-catch block">
+
+                
+
 
                 <h3 id="declaration">Routes vs. Middleware vs. Utils</h3>
                 <h4>Routes</h4>
@@ -130,7 +130,7 @@
                 <h5>Back - userRoutes.js</h5>
                 <img src="assets/signup_route_userroutes.png" alt="signup route in userRoutes file">
 
-
+                <h5></h5>
 
                 <h4>Middleware</h4>
                 <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
@@ -164,479 +164,55 @@
                 <p></p>
                 <p></p>
 
-                <h3 id="strings">Strings</h3>
-                <p>We've seen strings as well, they are all characters including spaces.</p>
-                <p>They must be contained in<span class="bold"> '' or "" </span>to be a valid string.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">> </span><span class="string">"Cake is tasty."</span>
-<span class="punctuation">></span> <span class="string">"92"</span>
-<span class="punctuation">></span> <span class="string">'what?#!?%?'</span></code></pre>
-                </div>
-
-                <h3 id="concatination">String Concatination</h3>
-                <p>It might surprise you to know, that we can also add strings using the <span class="bold">+</span> operator!</p>
-
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="punctuation">> </span><span class="string">"I love "</span><span class="punctuation"> +</span> <span class="string">"JavaScript"</span><span class="punctuation"> +</span> <span class="string">"!"</span><span class="punctuation">;</span>
-<span class="string">"I love JavaScript!"</span>
-
-<span class="punctuation">> </span><span class="keyword">var </span>language <span class="punctuation">=</span> <span class="string">"JavaScript"</span><span class="punctuation">;</span>
-<span class="punctuation">> </span><span class="keyword">var </span>sentence <span class="punctuation">=</span> <span class="string">"I love "</span><span class="punctuation"> + </span> language <span class="punctuation">+</span> <span class="string">"!"</span><span class="punctuation">;</span>
-
-<span class="punctuation">> </span>sentence<span class="punctuation">;</span>
-<span class="string">"I love JavaScript!"</span>
-</code></pre>
-                </div>
+                <h3 id="concatination">Database Relationships</h3>
+                <p>Understanding how different collections relate to one another <span class="bold">+</span> operator!</p>
 
             </section><!-- end of types -->
 
-            <!-- array -->
-            <section class="arrays" id="arrays">
-                <h2 class="heading">Arrays</h2>
-                <p>What if we wanted to store a list containing many strings, or many numbers in one variable? We can do that with a built in JavaScript object, an Array.</p>
-                <p>An Array can hold as elements as you can dream of.</p>
-                <p>To create an Array, we utilize the <span class="bold">[ ]</span> square brackets and commas to separate each element.</p>
-                <div class="js-highlight">
-<pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span class="punctuation">];</span>
-
-<span class="keyword">var </span>bingoDraws <span class="punctuation">= [</span>8<span
-    class="punctuation">, </span>14<span class="punctuation">,</span> 2<span
-    class="punctuation">,</span> 3<span class="punctuation">,</span> 11<span class="punctuation">,</span> 21<span class="punctuation">,</span> 7<span
-    class="punctuation">];</span>
-</code></pre></div>
-
-            <p>There are many different ways to access values in an array and do something with them.</p>
-            <p>Let's learn about functions so we can dive into a cool way to access elements in an array.</p>
-
-            </section><!--end of array-->
-
-            <!-- functions section -->
-            <section class="functions" id="functions">
-                <h2 class="heading">Functions</h2>
-                <p>Functions are chunks of code that can be called to run at anytime when they're called to action, and they perform a certain task.</p>
-                <p>Functions are possibly the most powerful concept in any programming language but especially in JavaScript. They allow you to unlock your powers as a JavaScript wizard.🔮💫</p>
-                <p>We are going to use<span class="bold"> functions </span>today to:</p>
-                <ul>
-                    <li>grab HTML elements on our page</li>
-                    <li>add and remove CSS classes from them</li>
-                    <li>access values in arrays</li>
-                    <li>listen to events from users interacting with our page</li>
-                    <li>we'll be writing some of our own <span class="bold">custom</span> functions as well</li>
-                </ul>
-
-                <h3 id="defining">Defining a Function</h3>
-                <p>A function is defined with the <span class="bold">function</span> keyword, followed by the name you would like to call your function, and then a set of <span class="bold">( )</span> and <span class="bold">{ }</span> brackets.</p>
+            <!-- gotchas -->
+            <section class="gotchas" id="gotchas">
+                <h2 class="heading">Gotchas</h2>
+                <p>The biggest gotcha I experienced was dealing with authentication with tokens and email verification.</p>
+                <p>One verification token cannot be used to lock down.</p>
+                <p>I had never completed any email validation before so figuring out that flow was super confusing for me.</p>
+                
+                <p>SCREENSHOT OF EMAIL VERIFICATION STUFF</p>
                 <p></p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">nameOfFunction</span><span class="punctuation">() </span><span class="punctuation">{</span> <span class="punctuation">}</span>
+                <p></p>
 
-<span class="keyword">function </span><span class="function-name">nameOfFunction</span><span class="punctuation">() </span><span class="punctuation">{ </span>
-    <span class="comment">// do things here</span>
-<span class="punctuation">}</span></code></pre>
-                </div>
+            </section><!--end of gotchas-->
 
-                <p>We can using a special built in function in JavaScript <span class="bold">console.log()</span> to print something to the user.</p>
-                <p>Let's work in our CodePen and try out some code.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello JavaScript Wizard!"</span><span
-        class="punctuation">)</span><span class="punctuation">;</span>
-</code></pre></div>
+            <!-- deployment section -->
+            <section class="deployment" id="deployment">
+                <h2 class="heading">Deployment</h2>
+                <p>I found this part horrendously painful</p>
+                <p>Used Digital Ocean for deployment which thankfully has some nice documentation</p>
+                <p>Setting up Certbot was a wild time as well. Had never worked with certificates or https</p> 
+            </section><!-- deployment end -->
 
-                <p><span class="bold">console.log()</span> will log the thing we gave it in our console!</p>
-                <p>Lets put our <span class="bold">console.log()</span> into a function called <span class="bold">sayHiWizard()</span> </p>
 
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">sayHiWizard</span><span class="punctuation">() </span><span class="punctuation">{ </span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"Hello JavaScript Wizard!"</span><span
-        class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span></code></pre>
-                </div>
+            <!-- updating -->
+            <section id="updating">
+                <h2 class="heading">Updating</h2>
+                <p>How do we make changes to the API once it has been deployed and if people are using it.</p>
 
-            <p>Hmm.... 🤔 nothing gets logged out to the console this time.</p>
-            <p>This is because we can define a function at any time, but to actually use the function we've defined, we need to call it to action!</p>
-            <p>If we don't <span class="bold">call</span> our function, it will never run.</p>
-            <p>To call our function we use the function name, followed by a pair of <span class="bold">( )</span> brackets.</p>
-            <div class="js-highlight">
-                <pre class="jsx"><code class="jsx"><span class="function-name">sayHiWizard</span><span class="punctuation">();</span>  </code></pre>
-            </div>
-            <p>Like magic!</p>
-            <div class="js-highlight">
-                <pre class="jsx"><code class="jsx"><span class="comment">// defining a function</span>
-<span class="keyword">function </span><span class="function-name">lovePotatoes</span><span class="punctuation">() </span><span class="punctuation">{ </span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"I love potatoes so much!"</span><span class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span>
+                <h3>The flow</h3>
+                <p>Have to get comfortable with SSH-ing to a remote server</p>
+                <p>Made a separate user on the remotely deployed server. Called this user apiuser and has a clone of the code base. As a result, can pull the updated code from git.</p>
+                <p>Had to learn a bit about pm2 which is a process manager that let's us run stuff</p>
 
-<span class="comment">// calling a function</span>
-<span class="function-name">lovePotatoes</span><span class="punctuation">();</span></code></pre>
-            </div>
+                <h3>Certificate renewal process</h3>
+                <p>Have to go through Certbot which offers the command of 'renew'</p>
+                <p>Requires some familiarity with Nginx web server</p>
 
-            <div class="exercise">
-                <h3 class="red-text">Exercise: Writing Your Own Functions</h3>
-                <p>In CodePen, write the following function and call it:</p>
-                <ul>
-                    <li>
-                        Write a function that console logs out this sentence:
-                        <p class="bold">"Hi my name is [yourName], but they call me [nickName]."</p>
-                        Replace <span class="bold">[nickName]</span> and <span class="bold">[yourName]</span> with names that relate to you.
-                        <p class="function-name-ex1 red-text">Hi my name is <span class="bold"> Nicolas Cage</span>, but they call me <span class="bold">The National Treasure</span>. <img src="https://www.placecage.com/200/100" alt=""> </p>
-                    </li>
-                </ul>
-            </div>
 
-            <h3 id="parameter">Parameter</h3>
-            <p>Instead of running the same code over and over again, we can give our functions a <span class="bold">parameter</span> as we define the function, so we can pass in different values to our functions during the function call.</p>
-            <p>If we can pass different values to work with each time into our functions, we have the power to reuse our functions in more situations!</p>
-            <p>To add a parameter to your function definition, pop the name of the param in between the ( ) brackets.</p>
-            <p>This name is completely up to you, it is just a placeholder for the values that will actually be passed in during a function call.</p>
-
-            <div class="js-highlight">
-            <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>potatoNum<span class="punctuation">) </span><span class="punctuation">{ </span>
-    <span class="comment">/* potatoNum is this function's param!</span>
-    <span class="comment"> we can now do something with the value of what is
-     passed in for potatoNum in our function */</span>
-<span class="punctuation">}</span>
-</code></pre>
-            </div>
-            <p>We can use <a href="#concatination"> string concatination</a> to console log out a sentence with our placeholder <span class="bold">potatoNum</span> that can hold any value!</p>
-            <div class="js-highlight">
-                <pre class="jsx"><code class="jsx"><span class="keyword">function </span><span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>potatoNum<span class="punctuation">) </span><span class="punctuation">{ </span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span class="string">"I'll have "</span> <span class="punctuation">+</span> potatoNum <span class="punctuation">+</span> <span class="string">" potatoes for dinner."</span><span
-            class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span>
-
-<span class="comment">// lets pass in the number "8" where potatoNum is</span>
-<span class="punctuation">></span> <span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>"8"<span class="punctuation">);</span>
-<span class="string">"I'll have 8 potatoes for dinner."</span>
-
-<span class="comment">// we can also pass in a variable!</span>
-<span class="punctuation">></span> <span class="keyword">var</span> myPotatoCount <span class="punctuation">=</span> "52"<span class="punctuation">;</span>
-<span class="punctuation">></span> <span class="function-name">dinnerPotatoes</span><span class="punctuation">(</span>myPotatoCount<span
-    class="punctuation">);</span>
-<span class="string">"I'll have 52 potatoes for dinner."</span>
-</code></pre>
-            </div>
-
-
-            <div class="fun-fact">
-                <p><span class="red-text">Fun Fact</span>: JavaScript was created in 10 days only and when released, and was developed under the name <a href="https://medium.com/@benastontweet/lesson-1a-the-history-of-javascript-8c1ce3bffb17">Mocha</a>.</p>
-            </div>
-
-
-            <div class="exercise">
-                <h3 class="red-text">Exercise: Functions with a Parameter</h3>
-                <p>In CodePen, write the following function and call it:</p>
-                <ul>
-                    <li>
-                        Write a function that takes in 1 parameter, <span class="bold">numCats</span> and console.logs out:
-                        <p class="bold">"Hi I love cats. In fact I own [numCats] cats."</p>
-                        <p>To begin, store the number of cats you own as a number in a variable called <span class="bold">myNumOfCats</span> outside of your function definition.</p>
-                        <p>In the function definition, use <a href="#concatination"> string concatination</a> to put your parameter <span class="bold">numCats</span> into the full string above, and console log out this full string.</p>
-                        <p>Call your function with <span class="bold">myNumOfCats</span> passed in the ( ) brackets.</p>
-                        <div class="cat-container">
-                            <img src="https://hychalknotes.s3.amazonaws.com/wilfred-cat-js-basics.jpg" alt="picture of white cat">
-                            <img src="https://hychalknotes.s3.amazonaws.com/lil-bub-cat-js-basics.png" alt="picture of carpet cat lil bubs">
-                            <img src="https://hychalknotes.s3.amazonaws.com/toothless-cat-js-basics.jpg" alt="black furry cat mound with giant green eyes">
-                            <img src="https://hychalknotes.s3.amazonaws.com/molly-cat-js-basics.jpg" alt="yellow shorthair with giant eye balls">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- <h3 id="for-each">For Each</h3>
-            <p>There are many different ways to access values in an array, today we'll look at a special function that is available on all Arrays in JavaScript, the <span class="bold">.forEach()</span> function.</p>
-            <p><span class="bold">.forEach()</span> is attached to any array you want to call it on. In the ( ) brackets we can pass in a function as a parameter, and <span class="bold">forEach()</span> runs that function on every single item in the array.</p>
-            <div class="js-highlight">
-                <pre class="jsx"><code class="jsx"><span class="keyword">var</span> someArray <span class="punctuation">= [</span>1, 4, 6, 2, 17<span class="punctuation">];</span>
-
-someArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="comment">/* pass in function here */</span><span class="punctuation">);</span> </code></pre>
-            </div>
-
-            <p>We can define the function we want to run right in the ( ) brackets.</p>
-            <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span
-                        class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span
-                        class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span
-                        class="punctuation">];</span>
-
-weekDays<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword"> function</span><span class="punctuation">(</span>day<span class="punctuation">) </span><span class="punctuation">{ </span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>day<span class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">});</span> </code></pre>
-                </div>
-
-                <p>Or we can also pass in the name of a function that we've already defined in our code.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var </span>weekDays <span class="punctuation">= [</span><span class="string">"mon"</span><span
-                        class="punctuation">,</span> <span class="string">"tue"</span><span class="punctuation">,</span> <span class="string">"wed"</span><span
-                        class="punctuation">,</span> <span class="string">"thur"</span><span class="punctuation">,</span> <span class="string">"fri"</span><span
-                        class="punctuation">];</span>
-
-<span class="keyword">function</span> <span class="function-name">logOutDays</span><span class="punctuation">(</span>dayToLog<span class="punctuation">) {</span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>dayToLog<span
-        class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span>
-
-weekDays<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span>logOutDays<span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p>Both chunks of code will create the same result! They are just different ways accomplish the same things.</p> -->
-
-            </section><!-- functions end -->
-
-
-            <!-- the dom -->
-            <section id="dom">
-                <h2 class="heading">The DOM</h2>
-                <p>Manipulating the elements we see on our page is one of the best parts about using JavaScript for web development. To learn how we can manipulate things we see on the page, let's learn about the DOM.</p>
-
-                <h3>What is the DOM</h3>
-                <p>The DOM stands for <span class="bold">document object model</span>, it represents all the HTML elements on our page in a tree like structure. When we talk about using JavaScript to manipulate the DOM we are adding, removing, and changing functionality and style to elements on our page.</p>
-
-                <img src="https://hychalknotes.s3.amazonaws.com/Screen%20Shot%202019-02-28%20at%2012.46.28%20PM.png" alt="picture of the DOM">
-
-                <p>To access the DOM, we can use keyword <span class="bold">document</span>.</p>
-                <p>Let's type that into our browser's console and see what we get back!</p>
-
-                <!-- grabbing items -->
-                <h3 id="access-dom">Grabbing Specific Elements from the DOM</h3>
-                <p>We can grab specific elements from the DOM using <span class="bold">.querySelector()</span> and <span class="bold">.querySelectorAll()</span>, these special functions are available on our <span class="bold">document</span>.</p>
-
-                <p>Let's try grabbing a few HTML elements from the page.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">"h1"</span><span class="punctuation">);</span>
-document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span
-    class="string">"p"</span><span class="punctuation">);</span></code></pre>
-                </div>
-
-                <p><span class="bold">document.querySelector( )</span> will return the first matched element found in the DOM. </p>
-                <p><span class="bold">document.querySelectorAll( )</span> will return all matched elements in a <span class="bold">nodeList</span>(kind of like an Array) </p>
-
-                <p>Theres a lot we can do to an element once we grab it from the DOM.</p>
-
-                <h3 id="event-listeners">Event Listeners</h3>
-                <p>Here comes an incredibly fun part of JavaScript, listening to user interactions with the elements on our page. 🎧</p>
-                <p>When a user clicks something, hovers over something, presses a key on their keyboard, these are all events we can listen for on DOM elements, and after we hear on of these events we can write code to react to these interactions!</p>
-
-                <p>We can listen for events on DOM elements using the <span class="bold">.addEventListener( )</span> function.</p>
-
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"event"</span><span class="punctuation">,</span> functionToRun<span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p><span class="bold">.addEventListener( )</span> takes 2 things in between the ( ) brackets, the event we want to listen for, and the function we want to run when the event has been heard.</p>
-
-                <h3 class="codealong-start" id="codealong-start">Codealong</h3>
-
-                <p>Let's go into our <span class="red-text">CodePen </span>and add an event listener to the <span class="bold">document</span> to listen for the <span class="bold">keydown</span> event, which will listen to everytime a key on the keyboard is pressed down.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword">function</span><span class="punctuation">(){</span>
-    <span class="comment">/* code to run here when
-    "keydown" event is heard */</span>
-<span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p>In our function that we passed in, let's make it log out to our console in CodePen that a key was pressed down, to see the event listener working.</p>
-                <div class="js-highlight"><pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword">function</span><span class="punctuation">(){</span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span><span
-        class="string">"A key was pressed down!"</span><span class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p>Now that we know when any key is pressed, we want to know exactly <span class="bold">which</span> key is pressed. </p>
-
-                <p>The function we pass into <span class="bold">.addEventListener()</span> can optionally give us access to the event, that is triggering it to run. We can gain access to the event that triggered the function by passing in the event between the ( ) brackets of the function.</p>
-                <p>We can use <span class="bold">e</span> to stand for event. Let's copy and paste the code below into the browser console, to see what <span class="bold">e</span> is, and what information it holds.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>e<span class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre></div>
-
-                <p>When we open Keyboard Event object in our console we can see a bunch of different properties that we have access to. </p>
-                <p>Find the <span class="bold">"key"</span> property, it's value should be the key that you pressed! 🤯 Now look for the <span class="bold">"keyCode"</span> property, what is that?</p>
-
-                <p>Every single one of your keys has a numeric keycode number that represents it. Go to <a href="http://keycode.info/" target="_blank">keycode.info</a> and press any key to see that specific key's keycode value.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>e<span class="punctuation">.</span><span class="keyword">keyCode</span><span class="punctuation">)</span><span class="punctuation">;</span>
-<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
-                </div>
-                <p>This is super useful, because in our HTML, we have audio elements that have an id matched with a specific keycode for a certain key. You'll notice that each of our div elements that hold the visual representation of each.</p>
-                <p>Let's store our keycode in a variable.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">document<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"keydown"</span><span class="punctuation">,</span><span class="keyword"> function</span><span class="punctuation">(</span>e<span class="punctuation">){</span>
-    <span class="keyword">var</span> keyCode <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">keyCode</span><span class="punctuation">;</span>
-<span class="punctuation">}</span><span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p>Now that we know which key is being pressed, lets grab the appropriate audio element from the DOM so that we can play on keydown!</p>
-                <p>Inside of our event listener let's select correct DOM element using string concatination and the keycode, passing those in as a string into <span class="bold">document.querySelector( )</span>.</p>
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var</span> audio <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">"audio[id='"</span> <span class="punctuation">+ </span>keyCode <span class="punctuation">+ </span><span class="string">"']"</span><span class="punctuation">);</span>
-<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>audio<span class="punctuation">)</span><span class="punctuation">;</span></span> </code></pre>
-                </div>
-
-                <p>Now each time we press down on a key we see the actual audio element from our DOM. We can play an audio element in JavaScript using the <span class="bold">.play( )</span> function. </p>
-
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">audio<span class="punctuation">.</span><span class="function-name">play</span><span class="punctuation">();</span> </code></pre>
-                </div>
-
-                <p>If we hit a key that has a longer sound like <span class="bold">[S]</span> we'll notice that even if we press it again we won't hear the sound play again until the audio file is finished playing.</p>
-                <p>Well, we want to spam our drum kit 🤟🏻. There is a special property called <span class="bold">.currentTime</span> that is available on our audio element that allows us to set the current position; in seconds, of our audio playback.</p>
-                <p>If we set the currentTime of audio back to 0 everytime before we play it, then we won't have to wait for the audio to finish playing before playing it again!</p>
-
-                <div class="js-highlight">
-                    <pre
-                        class="jsx"><code class="jsx">audio<span class="punctuation">.</span><span class="keyword">currentTime </span><span class="punctuation">=</span> 0<span class="punctuation">;</span> </code></pre>
-                </div>
-
-                <p>Our drum kit is working swimmingly!</p>
-                <p>Let's work on getting our keys lit every time they're pressed by ways of adding and taking away some CSS classes on our DOM elements.</p>
-
-                <p>Inside of our keydown event listener let's grab the visual representation of our keys from the DOM, and console out log out those elements.</p>
-
-                <div class="js-highlight"><pre class="jsx"><code class="jsx"><span class="keyword">var</span> key <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelector</span><span class="punctuation">(</span><span class="string">".key[id='"</span> <span class="punctuation">+ </span>keyCode <span class="punctuation">+ </span><span class="string">"']"</span><span class="punctuation">);</span>
-
-<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span class="punctuation">(</span>key<span class="punctuation">)</span><span class="punctuation">;</span></span> </code></pre></div>
-
-                <p>We should see something like this come up in our console.logs.</p>
-                <img src="assets/key-dom-element.png" alt="CodePen console log of key DOM elements">
-
-                <p>On this DOM element we want to add a class of <span class="bold">playing</span> when we press down on the key corresponding to the element's ID. Check out the <span class="bold">playing</span> class in our CSS.</p>
-
-                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">key<span class="punctuation">.</span><span class="keyword">classList</span><span class="punctuation">.</span><span class="function-name">add</span><span class="punctuation">(</span><span class="string">"playing"</span><span class="punctuation">);</span> </code></pre>
-                </div>
-
-                <p>Hmm... our keys are now getting styled on keydown but it looks like this class is never taken off and reset.</p>
-
-                <p>If we take a look at our css for the element with a class of <span class="bold">key</span> on it, we can see that there is a transition property that lasts 0.12 seconds which creates a nice little transition for our key when pressed.</p>
-
-                <p>We want to listen for when this transition has finished on all the elements on our DOM that have a class of <span class="bold">key</span>.</p>
-
-                <p>To accomplish this, we need to grab all the elements from our DOM with a class of <span class="bold">key</span>, add an event listener on to each one (maybe with the .forEach() function?), and when the transition end even has been heard, remove the class <span class="bold">playing</span> from that specific <span class="bold">key</span> element. </p>
-
-                <p>Lets begin by grabbing the node list of DOM elements using <span class="bold">.querySelectorAll()</span>. </p>
-
-                <!-- <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
-
-<span class="comment">/* view this console log in
-the browser's console, it's a
-bit too big for code pen's console! */</span>
-<span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
-    class="punctuation">(</span>keysNodelist<span class="punctuation">)</span><span class="punctuation">;</span></span></code></pre>
-                </div>
-
-                <p>We should see something like this in our browser's consoles.</p>
-                <img src="assets/node-list.png" alt="Chrome Browser console's nodeList log">
-
-                <p>This is a NodeList, very similar to an Array but not quite! We won't have access to special Array methods in JavaScript
-                with a NodeList.</p>
-                <p>We can turn this NodeList into an Array so we can access each element using special Array methods.</p> -->
-
-                <div class="js-highlight">
-                    <pre
-                        class="jsx"><code class="jsx"><span class="keyword">var</span> keysNodeList <span class="punctuation">=</span> document<span class="punctuation">.</span><span class="function-name">querySelectorAll</span><span class="punctuation">(</span><span class="string">".key"</span><span class="punctuation">);</span>
-<span class="keyword">var</span> keysArray <span class="punctuation">=</span> <span class="object">Array</span><span
-    class="punctuation">.</span><span class="function-name">from</span><span
-    class="punctuation">(</span>keysNodeList<span class="punctuation">);</span></code></pre>
-                </div>
-
-                <p>Now we can access every element in the <span class="bold">keysArray</span> using <span class="bold">.forEach()</span> function and listen for the end of the transition that was applied on the CSS of our key elements.</p>
-                <p> When the transition end has been heard we can remove the class of <span class="bold">playing</span> from the key's class list.</p>
-
-                <!-- <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
-    <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
-        class="punctuation">(</span>key<span class="punctuation">);</span>
-<span class="punctuation">});</span> </code></pre>
-                </div> -->
-
-                <!-- <p>Now that we have each key, lets attach an event listener to every key, and listen for the end of the transition that was applied on the CSS of our key elements.</p>
-                <p>Lets console log out the target of the event, which is the element that caused the event. This will return to us our <span class="bold">key</span> that we
-                were listening on. We can do this using <span class="bold">e.target</span>. -->
-
-                <!-- <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
-    key<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"transitionend"</span><span class="punctuation">, </span><span class="keyword">function</span><span class="punctuation">(</span>e<span class="punctuation">) {</span>
-        <span class="keyword">var</span> key <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">target</span><span class="punctuation">;</span>
-        <span class="object">console</span><span class="punctuation">.</span><span class="function-name">log</span><span
-        class="punctuation">(</span>key<span class="punctuation">);
-    });</span>
-<span class="punctuation">});</span> </code></pre>
-                </div>
-
-                <p>Now that we have the key, and we know the transition on that key has ended, we can remove the class of <span class="bold">playing</span> from the key's class list.</p> -->
-
-                                <div class="js-highlight">
-                    <pre class="jsx"><code class="jsx">keysArray<span class="punctuation">.</span><span class="function-name">forEach</span><span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>key<span class="punctuation">) {</span>
-    key<span class="punctuation">.</span><span class="function-name">addEventListener</span><span class="punctuation">(</span><span class="string">"transitionend"</span><span class="punctuation">, </span><span class="keyword">function</span><span class="punctuation">(</span>e<span class="punctuation">) {</span>
-        <span class="keyword">var</span> key <span class="punctuation">=</span> e<span class="punctuation">.</span><span class="keyword">target</span><span class="punctuation">;</span>
-        key<span class="punctuation">.</span><span class="keyword">classList</span><span class="punctuation">.</span><span class="function-name">remove</span><span
-        class="punctuation">(</span><span class="string">"playing"</span><span class="punctuation">);
-    });</span>
-<span class="punctuation">});</span> </code></pre>
-                </div>
-
-                <p>And there you have it! A drum kit that will jam on and on.</p>
-                <p>Feel free to share your personal link directly from CodePen to show anyone you'd like!</p>
-
-                <p>Check out this <a href="https://codepen.io/tiffnogueira/live/eXKwQM" target="_blank">version</a> of our Drum Kit with a day and night mode! Honestly, so many cool things we can do to spice up our projects in JavaScript. </p>
-
-            </section><!--end of the dom-->
+            </section><!--end of updating-->
 
             <section id="additional">
-                <h2 class="heading">Extra Codealong</h2>
-                <h3 class="red-text" id="count-calcula">Count Calcula</h3>
-                <p>A spicy video codealong.</p>
-                <p>Create a bill-spliter-calculator that won't bleed 🧛🏾‍♀️ you dry, and keep everyone responsible for their portion of their bill.</p>
-                <p>Fork your own starter file from CodePen <a href="https://codepen.io/tiffnogueira/pen/NJLqvO?editors=0010" target="_blank">here</a> and open up the <a href="https://youtu.be/i7B8IBQ6xBA" target="_blank">video walkthrough</a> to codealong!</p>
-
-                <div class="project-example">
-                    <a href="https://codepen.io/tiffnogueira/live/rRZVWB" target="_blank">
-                        <img src="assets/count-calcula.png" alt="Count Calcula title">
-                        <div class="overlay">Finished Product</div>
-                    </a>
-                </div>
-
-                <div class="fun-fact">
-                    <p><span class="red-text">Fun Fact</span>: 0.1 + 0.2 does not equal 0.3 in JavaScript. Type 0.1 + 0.2 == 0.3 in the console to see. == checks if something is equal to something else, as a single = just assigns a value.</p>
-                </div>
-
-                <h2 class="heading" id="courses">Ready to Learn More?</h2>
-                <p>Join our next round of <a href="https://hackeryou.com/courses/javascript" target="_blank">JavaScript</a> or <a href="https://hackeryou.com/courses/web-development" target="_blank">Web Development</a> courses:</p>
-                <h3>JavaScript at HackerYou:</h3>
-                <ul>
-                    <li class="bold">Who takes it?</li>
-                    <ul>
-                        <li>Graduates of our Web Development courses or those who are proficient in HTML, CSS & responsive design</li>
-                        <li>Front-end developers looking to add JavaScript to their skillset</li>
-                    </ul>
-                    <li><span class="bold">When?</span> Take it Part-Time (once/week on weekends, or twice/week on weeknights) or in an Accelerated format (2 weeks, full-time)</li>
-                    <li><span class="bold"> You'll learn:</span>How to apply programming logic and concepts in order to build applications that interact with data from an API.</li>
-                    <li><span class="bold">Prerequisites: </span>Completion of Web Development Fundamentals, or successfully completing a technical challenge to assess your
-                    HTML & CSS skills.</li>
-                </ul>
-
-                <h3>Web Development at HackerYou:</h3>
-                <ul>
-                    <li><span class="bold">Who takes it?</span></li>
-                    <ul>
-                        <li>Folks who want to take our <a href="https://hackeryou.com/blog/my-first-week-at-hackeryou-torontos-1-ranked-coding-bootcamp" target="_blank">Bootcamp</a> and become front-end developers</li>
-                        <li>Those who work with developers (designers, project managers, CEOs)</li>
-                        <li>People who want to learn a new skill and add coding to their resume</li>
-                    </ul>
-                    <li><span class="bold">When?</span> Take it Part-Time (once/week on weekends, or twice/week on weeknights) or in an Accelerated format (2 weeks, full-time)</li>
-                    <li><span class="bold">You'll learn:</span> How to build a mobile-responsive multi-page website from scratch using HTML & CSS (like <a href="https://lawryan.github.io/" target="_blank">this one</a>!)</li>
-                    <li><span class="bold">Prerequisites:</span> None! These courses are meant for beginners, or those who have dabbled a bit in HTML & CSS.</li>
-                </ul>
-
                 <h3>Extra Resources</h3>
                 <ol>
-                    <li>Check out our <a href="https://hackeryou.com/blog/five-free-resources-to-explore-if-youre-thinking-about-learning-to-code" target="_blank">Favourite Free Resources</a> </li>
-                    <li>Grab a copy of our Bootcamp <a href="https://go.hackeryou.com/2017-student-outcomes-report" target="_blank">Our Student Outcomes Report</a> </li>
-                    <li>Download the Web Development <a href="https://go.hackeryou.com/course-package/web-dev" target="_blank">Student Experience Package</a> </li>
-                    <li>Download a copy of our <a href="https://go.hackeryou.com/course-package/javascript" target="_blank">JavaScript Syllabus</a> </li>
+                    <li>Check out the new Full Stack code along -<a href="https://github.com/HackerYou/shoparoo" target="_blank"> Shoparoo</a> </li>
+                    <li>Notes on deploying Node.js to an Ubuntu droplet <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04" target="_blank">here</a></li>
                 </ol>
 
 
