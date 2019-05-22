@@ -241,7 +241,7 @@
                 <p>How do we make changes to the API once it has been deployed and if people are using it?</p>
 
                 <h3>The flow</h3>
-                <p>Really a lot of SSH-ing to another server.</p>
+                <p>Really a lot of SSH-ing to a remote server.</p>
                 <p>Make a separate user on the remotely deployed server called <span class="punctuation">apiuser</span>. This user has a clone of the code base meaning that the updated code can be pulled from GIT.</p>
                 <p>Run an <span class="punctuation">npm build</span> && <span class="punctuation">npm start</span> which compiles all our files into the dist directory and then uses pm2 to run.</p>
                 <h3></h3>
@@ -250,10 +250,11 @@
             <section id="additional">
                 <h3>Extra Resources</h3>
                 <ol>
-                    <li>Check out the new Full Stack code along -<a href="https://github.com/HackerYou/shoparoo" target="_blank"> Shoparoo</a> </li>
+                    <li>Check out the new Full Stack code along <a href="https://github.com/HackerYou/shoparoo" target="_blank"> here</a> </li>
                     <li>Check out Party Animals backend <a href="https://github.com/HackerYou/PartyAnimalsAPI" target="_blank"> here</a> </li>
                     <li>Notes on deploying Node.js to an Ubuntu droplet <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04" target="_blank">here</a></li>
                     <li>Notes on getting Let's Encrypt on Ubuntu droplet <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04" target="_blank">here</a></li>
+                    <li>Helpful tutorial on adding email verification to a Node app <a href="https://codemoto.io/coding/nodejs/email-verification-node-express-mongodb" target="_blank">here</a></li>
                 </ol>
 
                 <h3>Thanks for lunching alongside the learning!</h3>
