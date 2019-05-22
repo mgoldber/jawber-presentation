@@ -36,7 +36,7 @@
                         <a href="#started">Getting Started</a>
                     </li>
                     <li>
-                        <a href="#tools">Developing</a>
+                        <a href="#databases">Databases</a>
                     </li>
                     <li>
                         <a href="#gotchas">Gotchas</a>
@@ -118,19 +118,31 @@
                 <img src="assets/step1.jpg" alt="diagram of front end connecting to back end with link between react and node circled">
 
                 <h5>Front - Login.js</h5>
+
                 <img src="assets/axios_api_login_signup.png" alt="front-end call to users endpoint inside of try-catch block">
 
-                
+                <img src="assets/step2.jpg" alt="diagram of front end connecting to back end with post info into DB circled">
 
+                <h5>Back - userRoutes.js</h5>
+                <img src="assets/login_endpoint_1.png" alt="screenshot of the login endpoint in the userRoutes file">
+                
+                <h5>Back - userService.js</h5>
+                <img src="assets/is_user_function.png" alt="screenshot of function used to check if a user already exists in the database">
+
+                <h5>Back - userModel.js</h5>
+                <img src="assets/user_schema.png" alt="screenshot of the user schema">
+
+                <img src="assets/step3.jpg" alt="diagram of front end connecting to back end with send back object circled">
+                <h5>Back - userRoutes.js</h5>
+                <img src="assets/login_endpoint.png" alt="screenshot of the login endpoint of the router">
+
+                <img src="assets/step4.jpg" alt="diagram of front end connecting to back end with return json object circled">
+                <h5>Front - Login.js</h5>
+                <img src="assets/token_access_login.png" alt="screenshot of the token retrieval from login front end">
 
                 <h3 id="declaration">Routes vs. Middleware vs. Utils</h3>
                 <h4>Routes</h4>
                 <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
-
-                <h5>Back - userRoutes.js</h5>
-                <img src="assets/signup_route_userroutes.png" alt="signup route in userRoutes file">
-
-                <h5></h5>
 
                 <h4>Middleware</h4>
                 <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
@@ -141,80 +153,108 @@
                 <p>This is like the package.json file of the backend</p>
                 <p>This serves as the entry point for our API. Within here, we will set up necessary configurations, link the necessary segments of our API, and start the server and connection to our database.</p>
 
-                <p>TODO: SCREENSHOT HERE SHOWING THE FOLDER STRUCTURE OF API WITH SUBFOLDERS OF MIDDLEWARE, ROUTES, AND UTILS</p>
+                <h5>Back - server.js</h5>
+                <img src="assets/serverjs.png" alt="screenshot of the server starting by pulling in the routes">
 
                 <h3 id="declaration">Routes: Models, Routes, and Services</h3>
                 <h4>Models</h4>
                 <p>This is where we set up our schema. This maps to the way our information is stored in our database</p>
-                <p>TODO: SCREENSHOT HERE OF THE USER SCHEMA FROM SHOPAROO</p>
-                <p>TODO: POSSIBLY ALSO SCREENSHOT OF DATABASE DOCUMENT THAT MATCHES THIS SCHEMA</p>
                 <h4>Routes</h4>
-                <p>This will specify the logic that will happen when hitting different endpoints</p> 
-                <p>TODO: SCREENSHOT OF /SIGNUP AND THE ROUTER IMPORT</p>
+                <p>This will specify the logic that will happen when hitting different endpoints.</p> 
                 <h4>Services</h4>
-                <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>               
-                <p>TODO: SCREENSHOT OF CREATEUSER FUNCTION IN SHOPAROO</p>
+                <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>         
+                
+                <h5>Sample folder structure of API</h5>
+                <img style="width:300px;" src="assets/api_folder_structure.png" alt="screenshot of the folder structure for the API">
             </section><!--getting started section end-->
 
             <!-- types -->
             <section id="databases">
                 <h2 class="heading">Databases</h2>
-                <p>Thinking about database structure and how our collections relate will structure our code!</p>
-                <p>For example, the cart can have multiple cart items in an online store</p>
+                <p>Thinking about database structure and how our collections relate will help us structure our code!</p>
+                <p>For example, a party venue can have <span class="bold">multiple</span> attendees, but each attendee is <span class="bold">only at one</span> venue at any given time.</p>
                 <p></p>
                 <p></p>
 
                 <h3 id="concatination">Database Relationships</h3>
-                <p>Understanding how different collections relate to one another <span class="bold">+</span> operator!</p>
+                <p>It's important to understand how different collections relate to one another, even if the proper terminology isn't used to describe these relationships.</p>
 
+                <h5>Venue collection</h5>
+                <img src="assets/venue_database.png" alt="screenshot of a venue entry in the party animals database">
+                <h5>Animal collection</h5>
+                <img src="assets/animal_database.png" alt="screenshot of a animal entry in the party animals database">
             </section><!-- end of types -->
 
             <!-- gotchas -->
             <section class="gotchas" id="gotchas">
                 <h2 class="heading">Gotchas</h2>
-                <p>The biggest gotcha I experienced was dealing with authentication with tokens and email verification.</p>
-                <p>One verification token cannot be used to lock down.</p>
+                <p>The biggest gotcha I personally experienced was dealing with authentication through email verification.</p>
+                <p>The same token that your users get when creating an account cannot be used to lock down any routes that create a new entry in the database.</p>
                 <p>I had never completed any email validation before so figuring out that flow was super confusing for me.</p>
                 
-                <p>SCREENSHOT OF EMAIL VERIFICATION STUFF</p>
-                <p></p>
-                <p></p>
-
+                <h5>Sendgrid Email Validation</h5>
+                <img src="assets/sendgrid_validation.png" alt="screenshot of sendgrid validation function">
+                <h5>Confirmation Route</h5>
+                <img src="assets/confirmation_route.png" alt="screenshot of confirmation route linked to sendgrid validation">
+                <h5>User entity</h5>
+                <img src="assets/user_in_database.png" alt="screenshot of a user entry in the database">
+                <h5>isAdmin validation</h5>
+                <img src="assets/isadmin_flag.png" alt="code showing how to use the isAdmin flag for securing">
             </section><!--end of gotchas-->
 
             <!-- deployment section -->
             <section class="deployment" id="deployment">
                 <h2 class="heading">Deployment</h2>
-                <p>I found this part horrendously painful</p>
-                <p>Used Digital Ocean for deployment which thankfully has some nice documentation</p>
-                <p>Setting up Certbot was a wild time as well. Had never worked with certificates or https</p> 
+                <p>I found no enjoyment in this part of the process.</p>
+                <h4>High Level Steps:</h4>
+                <p>1. Create a new Ubuntu droplet within the HackerYou project on Digital Ocean.</p>
+                <p>2. SSH onto this remote server (Digital Ocean will provide you with the IP after set up).</p>
+                <p>3. Get Nginx and Node.js installed onto the remote server.</p>
+                <ul>
+                    <li>Nginx is one of the most popular web servers in the world. Load balances our traffic for us.</li>
+                </ul>
+                <p>4. Get PM2 installed.</p>
+                <ul>
+                    <li>PM2 is a production process manager for Node applications that allows you to keep applications alive forever.</li>
+                </ul>
+                <img src="assets/pm2_script_packagejson.png" alt="screenshot of the configuration to get pm2 running in production">
+                <p>5. Git your codebase onto the remote server.</p>
+                <p>6. Use PM2 to start up your application.</p>
+
+                <h3>From HTTP to HTTPS:</h3>
+                <p>We use something called Let's Encrypt which is a certificate authority that provides an easy way to
+                obtain and install free TLS/SSL certificates letting us have some encryped HTTPS on the server.</p>
+                <p>It provides us with a software client called Certbot.</p> 
+
+                <h4>High Level Steps:</h4>
+                <p>1. Install Certbot on remote server.</p>
+                <p>2. Adjust firewall to allow for HTTPS traffic.</p>
+                <p>3. Generate the SSL certificate.</p>
+                <p>4. Do a renewal dry run so that you know the certication will renew when the time comes.</p>
+                <p>5. Go to the URL of the server and you should see a lock to the left of the URL.</p>
             </section><!-- deployment end -->
 
 
             <!-- updating -->
             <section id="updating">
                 <h2 class="heading">Updating</h2>
-                <p>How do we make changes to the API once it has been deployed and if people are using it.</p>
+                <p>How do we make changes to the API once it has been deployed and if people are using it?</p>
 
                 <h3>The flow</h3>
-                <p>Have to get comfortable with SSH-ing to a remote server</p>
-                <p>Made a separate user on the remotely deployed server. Called this user apiuser and has a clone of the code base. As a result, can pull the updated code from git.</p>
-                <p>Had to learn a bit about pm2 which is a process manager that let's us run stuff</p>
-
-                <h3>Certificate renewal process</h3>
-                <p>Have to go through Certbot which offers the command of 'renew'</p>
-                <p>Requires some familiarity with Nginx web server</p>
-
-
+                <p>Really a lot of SSH-ing to another server.</p>
+                <p>Make a separate user on the remotely deployed server called <span class="punctuation">apiuser</span>. This user has a clone of the code base meaning that the updated code can be pulled from GIT.</p>
+                <p>Run an <span class="punctuation">npm build</span> && <span class="punctuation">npm start</span> which compiles all our files into the dist directory and then uses pm2 to run.</p>
+                <h3></h3>
             </section><!--end of updating-->
 
             <section id="additional">
                 <h3>Extra Resources</h3>
                 <ol>
                     <li>Check out the new Full Stack code along -<a href="https://github.com/HackerYou/shoparoo" target="_blank"> Shoparoo</a> </li>
+                    <li>Check out Party Animals backend <a href="https://github.com/HackerYou/PartyAnimalsAPI" target="_blank"> here</a> </li>
                     <li>Notes on deploying Node.js to an Ubuntu droplet <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04" target="_blank">here</a></li>
+                    <li>Notes on getting Let's Encrypt on Ubuntu droplet <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04" target="_blank">here</a></li>
                 </ol>
-
 
                 <h3>Thanks for lunching alongside the learning!</h3>
             </section>
