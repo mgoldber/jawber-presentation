@@ -67,17 +67,17 @@
                 <h2 class="heading">Tools</h2>
                 <h3>NodeJS</h3>
                 <p>Node allows us to run JavaScript on the server. Node allows us to
-                    run our API, communicate with our database, and do everything build related.
+                    run our API, communicate with our database, and complete build related tasks.
                 </p>
 
                 <h3>MongoDB</h3>
                 <p>This is a popular and great choice for your database since data is organized
-                    into documents, and these documents very closely resemble JavaScript objects.
+                    into documents, and these documents very closely resemble JSON.
                 </p>
 
                 <h3>Mongoose</h3>
-                <p>Mongoose is utilized for our connection between Node and MongoDB. In addition, within our
-                    server file, mongoose is used to establish the connection to our database.
+                <p>Mongoose is utilized for our connection between Node and MongoDB. Known as an Object Data Modelling Library (ODM). In addition, within our
+                    server file, mongoose is used to establish the connection to our database. It includes built-in type casting, validation, query building, business logic hooks, and more, out of the box.
                 </p>
 
                 <h3>JWT</h3>
@@ -99,12 +99,14 @@
                     someone is having trouble getting their API key, or other problems arise, we
                     are at the mercy of the API.
                 </p>
-                <p>With our own API, we can simply generate back up tokens, respond faster if the 
-                    API goes down, develop the API to meet our exact needs, and more!
+                <p>With our own API, we can generate back up tokens, respond faster if the 
+                    API goes down, develop the API to meet the course's exact needs, and more!
                 </p>
 
-                <h3 id="repl">Style points</h3>
+                <h3>Style points</h3>
                 <p>It makes us look cool.</p>
+
+                <img src="https://media.giphy.com/media/27npJ7KfvMsoM/giphy.gif" />
 
             </section><!-- Why Do It section end -->
 
@@ -113,7 +115,7 @@
                 <h2 class="heading">Getting Started</h2>
                 <p>The hardest part is always getting started!</p>
 
-                <p>I like to think about it by going through the whole flow of information from the front-end to the back-end.</p>
+                <p>I like to visualize how everything works by going through the whole flow of information from the front end to the back end and then bringing it back again.</p>
 
                 <img src="assets/step1.jpg" alt="diagram of front end connecting to back end with link between react and node circled">
 
@@ -145,22 +147,22 @@
                 <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
 
                 <h4>Middleware</h4>
-                <p>Middleware is where we can define actions that our application should run through. Middleware expects the layer to do some computation, augment parameters, and call `next` as a callback function.</p>
+                <p>Middleware are functions that have access to the request object (req), response object (res), and the next function. Middleware functions can execute any code, make changes to request and response objects, end the request-response cycle, and call the next middleware in the stack.</p>
+                <img src="assets/middlewareexplained.png" alt="screenshot of the breakdown of middleware in Express">
+                
                 <h4>Utils</h4>
                 <p>This will hold our helper functions, as well as any constants that are required in our application.</p>
 
                 <h3 id="declaration">Server.js</h3>
                 <p>This is like the package.json file of the backend</p>
-                <p>This serves as the entry point for our API. Within here, we will set up necessary configurations, link the necessary segments of our API, and start the server and connection to our database.</p>
+                <p>This serves as the entry point for our API. Within here, we will set up configurations, link the various segments of our API, and start the server and connection to our database.</p>
 
                 <h5>Back - server.js</h5>
                 <img src="assets/serverjs.png" alt="screenshot of the server starting by pulling in the routes">
 
-                <h3 id="declaration">Routes: Models, Routes, and Services</h3>
+                <h3 id="declaration">Routes: Models and Services</h3>
                 <h4>Models</h4>
-                <p>This is where we set up our schema. This maps to the way our information is stored in our database</p>
-                <h4>Routes</h4>
-                <p>This will specify the logic that will happen when hitting different endpoints.</p> 
+                <p>This is where we set up our schema. This maps to the way our information is stored in our database.</p>
                 <h4>Services</h4>
                 <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>         
                 
@@ -183,13 +185,16 @@
                 <img src="assets/venue_database.png" alt="screenshot of a venue entry in the party animals database">
                 <h5>Animal collection</h5>
                 <img src="assets/animal_database.png" alt="screenshot of a animal entry in the party animals database">
+
+                <h5>Sample New Animal Creation</h5>
+                <img style="width: 60%;" src="assets/animalcreation.png" alt="screenshot of the code to create a new animal in the system">
             </section><!-- end of types -->
 
             <!-- gotchas -->
             <section class="gotchas" id="gotchas">
                 <h2 class="heading">Gotchas</h2>
                 <p>The biggest gotcha I personally experienced was dealing with authentication through email verification.</p>
-                <p>The same token that your users get when creating an account cannot be used to lock down any routes that create a new entry in the database.</p>
+                <p>The same token that your users get when creating an account cannot be used to lock down routes that create a new entry in the database.</p>
                 <p>I had never completed any email validation before so figuring out that flow was super confusing for me.</p>
                 
                 <h5>Sendgrid Email Validation</h5>
@@ -208,7 +213,7 @@
                 <p>I found no enjoyment in this part of the process.</p>
                 <h4>High Level Steps:</h4>
                 <p>1. Create a new Ubuntu droplet within the HackerYou project on Digital Ocean.</p>
-                <p>2. SSH onto this remote server (Digital Ocean will provide you with the IP after set up).</p>
+                <p>2. SSH onto the remote server (Digital Ocean will provide you with the IP after set up).</p>
                 <p>3. Get Nginx and Node.js installed onto the remote server.</p>
                 <ul>
                     <li>Nginx is one of the most popular web servers in the world. Load balances our traffic for us.</li>
