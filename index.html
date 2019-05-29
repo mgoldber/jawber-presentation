@@ -72,7 +72,7 @@
 
                 <h3>MongoDB</h3>
                 <p>This is a popular and great choice for your database since data is organized
-                    into documents, and these documents very closely resemble JSON.
+                    into JSON documents, which interacts nicely with our full JavaScript stack.
                 </p>
 
                 <h3>Mongoose</h3>
@@ -113,7 +113,6 @@
             <!-- getting started section -->
             <section class="variables" id="started">
                 <h2 class="heading">Getting Started</h2>
-                <p>The hardest part is always getting started!</p>
 
                 <p>I like to visualize how everything works by going through the whole flow of information from the front end to the back end and then bringing it back again.</p>
 
@@ -134,6 +133,9 @@
                 <h5>Back - userModel.js</h5>
                 <img src="assets/user_schema.png" alt="screenshot of the user schema">
 
+                <h5>Back - tokenService.js</h5>
+                <img src="assets/tokenservice.png" alt="screenshot of tokenservice function">
+
                 <img src="assets/step3.jpg" alt="diagram of front end connecting to back end with send back object circled">
                 <h5>Back - userRoutes.js</h5>
                 <img src="assets/login_endpoint.png" alt="screenshot of the login endpoint of the router">
@@ -145,14 +147,42 @@
                 <h3 id="declaration">Routes vs. Middleware vs. Utils</h3>
                 <h4>Routes</h4>
                 <p>This will hold the information specifying what happens when the endpoints of our API are hit.</p>
+                <h5>Node without Express</h5>
+                <img src="assets/node_without_express_highlighted.png" alt="screenshot of what writing node without express might look like">
+                <img src="https://media.giphy.com/media/pVAMI8QYM42n6/giphy.gif" alt="gif of Jim Carry being sick"/>
+                <p></p>
+                <img src="assets/router_highlited.png" alt="screenshot of the router route highlited in the route file">
 
                 <h4>Middleware</h4>
                 <p>Middleware are functions that have access to the request object (req), response object (res), and the next function. Middleware functions can execute any code, make changes to request and response objects, end the request-response cycle, and call the next middleware in the stack.</p>
                 <img src="assets/middlewareexplained.png" alt="screenshot of the breakdown of middleware in Express">
+
+                <img src="assets/middleware_highlighted.png" alt="screenshot of the router middleware highlited in the route file">
                 
+                <h5>Auth Middleware Example</h5>
+                <img src="assets/authorization_middleware.png" alt="screenshot of authorization middleware function">
+                
+                <p></p>
+                <img src="assets/authorization_middleware_used.png" alt="screenshot of authorization middleware function being called">
+
                 <h4>Utils</h4>
                 <p>This will hold our helper functions, as well as any constants that are required in our application.</p>
 
+                <img src="assets/tokenservice.png" alt="screenshot of tokenservice function">
+
+                <h3 id="declaration">Routes: Models and Services</h3>
+                <h4>Models</h4>
+                <p>This is where we set up our schema. This maps to the way our information is stored in our database.</p>
+
+                <img src="assets/user_schema.png" alt="screenshot of the user schema">
+                <p></p>
+                <img src="assets/user_in_db.png" alt="screenshot of authorization middleware function being called">
+
+                <h4>Services</h4>
+                <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>  
+                
+                <img src="assets/is_user_function.png" alt="screenshot of function used to check if a user already exists in the database">
+                
                 <h3 id="declaration">Server.js</h3>
                 <p>This is like the package.json file of the backend</p>
                 <p>This serves as the entry point for our API. Within here, we will set up configurations, link the various segments of our API, and start the server and connection to our database.</p>
@@ -160,14 +190,10 @@
                 <h5>Back - server.js</h5>
                 <img src="assets/serverjs.png" alt="screenshot of the server starting by pulling in the routes">
 
-                <h3 id="declaration">Routes: Models and Services</h3>
-                <h4>Models</h4>
-                <p>This is where we set up our schema. This maps to the way our information is stored in our database.</p>
-                <h4>Services</h4>
-                <p>This will contain helper functions that we can use within our routes to perform important actions and reduce code repetition.</p>         
-                
                 <h5>Sample folder structure of API</h5>
                 <img style="width:300px;" src="assets/api_folder_structure.png" alt="screenshot of the folder structure for the API">
+                <p></p>
+                <img style="width:300px;" src="assets/api_folder_talked.png" alt="screenshot of the folder structure for the API with highlights of what we talked about">
             </section><!--getting started section end-->
 
             <!-- types -->
@@ -182,12 +208,12 @@
                 <p>It's important to understand how different collections relate to one another, even if the proper terminology isn't used to describe these relationships.</p>
 
                 <h5>Venue collection</h5>
-                <img src="assets/venue_database.png" alt="screenshot of a venue entry in the party animals database">
+                <img src="assets/venue_database_highlighted.png" alt="screenshot of a venue entry in the party animals database">
                 <h5>Animal collection</h5>
-                <img src="assets/animal_database.png" alt="screenshot of a animal entry in the party animals database">
+                <img src="assets/animal_database_highlighted.png" alt="screenshot of a animal entry in the party animals database">
 
                 <h5>Sample New Animal Creation</h5>
-                <img style="width: 60%;" src="assets/animalcreation.png" alt="screenshot of the code to create a new animal in the system">
+                <img style="width: 60%;" src="assets/animalcreation_highlighted.png" alt="screenshot of the code to create a new animal in the system">
             </section><!-- end of types -->
 
             <!-- gotchas -->
@@ -198,13 +224,13 @@
                 <p>I had never completed any email validation before so figuring out that flow was super confusing for me.</p>
                 
                 <h5>Sendgrid Email Validation</h5>
-                <img src="assets/sendgrid_validation.png" alt="screenshot of sendgrid validation function">
+                <img src="assets/sendgrid_validation_highlighted.png" alt="screenshot of sendgrid validation function">
                 <h5>Confirmation Route</h5>
-                <img src="assets/confirmation_route.png" alt="screenshot of confirmation route linked to sendgrid validation">
+                <img src="assets/confirmation_route_highlighted.png" alt="screenshot of confirmation route linked to sendgrid validation">
                 <h5>User entity</h5>
-                <img src="assets/user_in_database.png" alt="screenshot of a user entry in the database">
+                <img src="assets/verified_admin_flags.png" alt="screenshot of a user entry in the database">
                 <h5>isAdmin validation</h5>
-                <img src="assets/isadmin_flag.png" alt="code showing how to use the isAdmin flag for securing">
+                <img src="assets/isadmin_flag_highlighted.png" alt="code showing how to use the isAdmin flag for securing">
             </section><!--end of gotchas-->
 
             <!-- deployment section -->
@@ -222,13 +248,14 @@
                 <ul>
                     <li>PM2 is a production process manager for Node applications that allows you to keep applications alive forever.</li>
                 </ul>
+                <h5>package.json</h5>
                 <img src="assets/pm2_script_packagejson.png" alt="screenshot of the configuration to get pm2 running in production">
                 <p>5. Git your codebase onto the remote server.</p>
                 <p>6. Use PM2 to start up your application.</p>
 
                 <h3>From HTTP to HTTPS:</h3>
                 <p>We use something called Let's Encrypt which is a certificate authority that provides an easy way to
-                obtain and install free TLS/SSL certificates letting us have some encryped HTTPS on the server.</p>
+                obtain and install free TLS/SSL certificates letting us have some encrypted HTTPS on the server.</p>
                 <p>It provides us with a software client called Certbot.</p> 
 
                 <h4>High Level Steps:</h4>
@@ -237,6 +264,10 @@
                 <p>3. Generate the SSL certificate.</p>
                 <p>4. Do a renewal dry run so that you know the certication will renew when the time comes.</p>
                 <p>5. Go to the URL of the server and you should see a lock to the left of the URL.</p>
+
+                <img src="assets/certificate_lock.png" alt="screenshot of the certificate lock for the Party Animals server">
+                <p></p>
+                <img src="assets/partyanimals_certificate.png" alt="screenshot of the party animals certificate">
             </section><!-- deployment end -->
 
 
